@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="INTELLECT — free, accessible educational resources.">
+  <title>INTELLECT | Quality Online Education</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --surface: #ffffff;
+      --text: #101828;
+      --muted: #667085;
+      --line: #e4e7ec;
+      --primary: #3157d5;
+      --primary-dark: #203da5;
+      --accent: #15a37b;
+      --dark: #0b1220;
+      --shadow: 0 18px 50px rgba(16, 24, 40, .09);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+
+    .container { width: min(1160px, calc(100% - 40px)); margin: auto; }
+
+    /* Navigation */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,.86);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(228,231,236,.8);
+    }
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .brand {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: -.04em;
+    }
+    .brand span { color: var(--primary); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+    }
+    .nav-links a {
+      padding: 10px 14px;
+      color: #475467;
+      font-size: .92rem;
+      font-weight: 600;
+      border-radius: 10px;
+      transition: .2s ease;
+    }
+    .nav-links a:hover { color: var(--primary); background: #eef2ff; }
+    .contact-btn {
+      border: 0;
+      background: var(--dark);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+    .contact-btn:hover { transform: translateY(-2px); background: var(--primary); }
+
+    /* Hero */
+    .hero {
+      padding: 100px 0 80px;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(49,87,213,.14), transparent 30%),
+        radial-gradient(circle at 10% 90%, rgba(21,163,123,.10), transparent 28%),
+        var(--surface);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 70px;
+      align-items: center;
+    }
+    .badge {
+      display: inline-flex;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: var(--primary);
+      font-size: .78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .hero h1 {
+      margin-top: 20px;
+      max-width: 720px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(3rem, 7vw, 5.8rem);
+      line-height: .98;
+      letter-spacing: -.065em;
+    }
+    .hero h1 .accent { color: var(--primary); }
+    .hero p {
+      max-width: 610px;
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+    .hero-actions {
+      margin-top: 32px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 13px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+    .btn-primary { color: white; background: var(--primary); }
+    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); }
+    .btn-secondary { background: #f2f4f7; color: #344054; }
+    .btn-secondary:hover { background: #e4e7ec; }
+
+    .hero-panel {
+      min-height: 390px;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      background: linear-gradient(145deg, #111a31, #182c68);
+      color: white;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-panel::before {
+      content: "";
+      width: 210px;
+      height: 210px;
+      position: absolute;
+      right: -70px;
+      top: -60px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.09);
+    }
+    .hero-panel .mini-label { color: #aab9e9; font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; }
+    .hero-panel h2 {
+      position: relative;
+      max-width: 330px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 2.25rem;
+      line-height: 1.08;
+    }
+    .hero-panel .panel-number {
+      font-size: 5rem;
+      line-height: 1;
+      font-weight: 800;
+      color: #8ee3c8;
+      letter-spacing: -.08em;
+    }
+
+    /* Topics */
+    .section { padding: 88px 0; }
+    .section-head { display: flex; justify-content: space-between; gap: 30px; align-items: end; margin-bottom: 34px; }
+    .section-kicker { color: var(--accent); text-transform: uppercase; letter-spacing: .12em; font-size: .75rem; font-weight: 800; }
+    .section h2 {
+      margin-top: 7px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.05;
+      letter-spacing: -.05em;
+    }
+    .section-head p { max-width: 450px; color: var(--muted); }
+
+    .topics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .topic-card {
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 30px rgba(16,24,40,.045);
+      transition: .25s ease;
+    }
+    .topic-card:hover { transform: translateY(-7px); box-shadow: var(--shadow); }
+    .card-icon {
+      height: 145px;
+      display: grid;
+      place-items: center;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: white;
+      background: linear-gradient(135deg, #3157d5, #15a37b);
+    }
+    .topic-card:nth-child(2) .card-icon { background: linear-gradient(135deg, #1f7a5b, #8ebc4f); }
+    .topic-card:nth-child(3) .card-icon { background: linear-gradient(135deg, #172554, #4f46e5); }
+    .topic-card:nth-child(4) .card-icon { background: linear-gradient(135deg, #166534, #84cc16); }
+    .topic-card:nth-child(5) .card-icon { background: linear-gradient(135deg, #7c2d12, #ea580c); }
+    .topic-card:nth-child(6) .card-icon { background: linear-gradient(135deg, #0f172a, #475569); }
+    .card-body { padding: 24px; }
+    .eyebrow {
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      font-size: .68rem;
+      font-weight: 800;
+    }
+    .card-body h3 { margin-top: 7px; font-family: "Space Grotesk", sans-serif; font-size: 1.3rem; }
+    .card-body p { margin-top: 10px; color: var(--muted); font-size: .92rem; }
+    .card-link {
+      display: inline-flex;
+      margin-top: 20px;
+      color: var(--primary);
+      font-size: .9rem;
+      font-weight: 800;
+      gap: 8px;
+    }
+    .card-link span { transition: .2s; }
+    .card-link:hover span { transform: translateX(4px); }
+
+    /* Stats */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 50px;
+    }
+    .stat {
+      padding: 28px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      text-align: center;
+    }
+    .stat-number { font-family: "Space Grotesk", sans-serif; font-size: 2.7rem; font-weight: 800; color: var(--primary); }
+    .stat-label { margin-top: 4px; color: var(--muted); font-size: .85rem; font-weight: 600; }
+
+    /* Mission */
+    .mission {
+      padding: 90px 0;
+      background: var(--dark);
+      color: white;
+    }
+    .mission-box {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+    .mission-mark {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 24px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #3157d5, #15a37b);
+      font-size: 1.5rem;
+      font-weight: 800;
+    }
+    .mission blockquote {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(1.6rem, 3vw, 2.55rem);
+      line-height: 1.25;
+      letter-spacing: -.035em;
+    }
+    .mission cite { display: block; margin-top: 22px; color: #aab4c7; font-style: normal; font-weight: 700; }
+
+    /* Footer */
+    footer {
+      background: #070b14;
+      color: white;
+      padding: 55px 0 25px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 50px;
+    }
+    .footer-brand { font-family: "Space Grotesk", sans-serif; font-size: 2rem; font-weight: 800; }
+    .footer-brand span { color: #8ee3c8; }
+    .footer-copy { max-width: 390px; margin-top: 12px; color: #98a2b3; }
+    .footer-title { font-size: .8rem; text-transform: uppercase; letter-spacing: .1em; color: #98a2b3; font-weight: 800; }
+    .footer-links { list-style: none; margin-top: 14px; }
+    .footer-links li + li { margin-top: 9px; }
+    .footer-links a { color: #d0d5dd; }
+    .footer-links a:hover { color: white; }
+    .footer-bottom {
+      margin-top: 45px;
+      padding-top: 20px;
+      border-top: 1px solid #202938;
+      color: #667085;
+      font-size: .8rem;
+      text-align: center;
+    }
+
+    /* Chatbot */
+    #chat-toggle {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 200;
+      width: 56px;
+      height: 56px;
+      border: 0;
+      border-radius: 50%;
+      background: var(--primary);
+      color: white;
+      font-size: 1.35rem;
+      cursor: pointer;
+      box-shadow: 0 12px 28px rgba(49,87,213,.35);
+    }
+    #chatbot {
+      position: fixed;
+      right: 24px;
+      bottom: 92px;
+      z-index: 199;
+      width: min(360px, calc(100vw - 32px));
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 25px 70px rgba(16,24,40,.18);
+      display: none;
+    }
+    .chat-header {
+      padding: 16px 18px;
+      background: var(--dark);
+      color: white;
+      font-weight: 800;
+      display: flex;
+      justify-content: space-between;
+    }
+    #chatbox { height: 250px; overflow-y: auto; padding: 15px; background: #f8fafc; }
+    .message { max-width: 85%; margin-bottom: 10px; padding: 9px 12px; border-radius: 12px; font-size: .88rem; }
+    .user { margin-left: auto; background: var(--primary); color: white; }
+    .bot { background: white; border: 1px solid var(--line); }
+    .chat-input { display: flex; border-top: 1px solid var(--line); }
+    .chat-input input { flex: 1; border: 0; padding: 13px; outline: none; }
+    .chat-input button { border: 0; padding: 0 17px; background: var(--primary); color: white; cursor: pointer; font-weight: 700; }
+
+    @media (max-width: 850px) {
+      .hero { padding-top: 70px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 35px; }
+      .topics { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .container { width: min(100% - 28px, 1160px); }
+      .nav-inner { min-height: 64px; }
+      .nav-links { gap: 0; }
+      .nav-links a { padding: 8px; font-size: .78rem; }
+      .contact-btn { display: none; }
+      .hero h1 { font-size: 3.2rem; }
+      .topics, .stats, .footer-grid { grid-template-columns: 1fr; }
+      .section { padding: 65px 0; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 14px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">INTEL<span>LECT</span></a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="mweb.html">Contents</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="form.html">Support</a></li>
+        </ul>
+      </nav>
+      <button class="contact-btn" onclick="alert('Contact: +91 008 245 2944')">Contact</button>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="badge">Free learning platform</span>
+          <h1>Making <span class="accent">quality education</span> accessible to all.</h1>
+          <p>Explore clear, useful learning resources across technology, science, environment and more — designed to make learning simpler and more accessible.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mweb.html">Explore contents →</a>
+            <a class="btn btn-secondary" href="#topics">Featured topics</a>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <div>
+            <div class="mini-label">INTELLECT learning hub</div>
+            <h2>Learn something useful today.</h2>
+          </div>
+          <div>
+            <div class="panel-number"></div>
+            <div class="mini-label">Curiosity • Knowledge • Growth</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="topics">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Explore</div>
+            <h2>Featured learning topics</h2>
+          </div>
+          <p>A cleaner, focused way to discover the educational resources available on INTELLECT.</p>
+        </div>
+
+        <div class="topics">
+          <article class="topic-card">
+      <div class="card-icon">AI</div>
+      <div class="card-body">
+        <span class="eyebrow">Featured topic</span>
+        <h3>AI</h3>
+        <p>Artificial intelligence is the ability of machines to perform tasks that are typically associated with human intelligence.</p>
+        <a class="card-link" href="aii.html">Explore topic <span>→</span></a>
+      </div>
+    </article>
+<article class="topic-card">
+      <div class="card-icon">DEF</div>
+      <div class="card-body">
+        <span class="eyebrow">Featured topic</span>
+        <h3>DEFORESTATION</h3>
+        <p>Deforestation causes an increase of atmospheric temperature, soil erosion and desertification.</p>
+        <a class="card-link" href="para.html">Explore topic <span>→</span></a>
+      </div>
+    </article>
+<article class="topic-card">
+      <div class="card-icon">CYBER</div>
+      <div class="card-body">
+        <span class="eyebrow">Featured topic</span>
+        <h3>CYBER SECURITY</h3>
+        <p>Nowadays, cyberattacks are common. Take initiative to secure your data.</p>
+        <a class="card-link" href="web2.html">Explore topic <span>→</span></a>
+      </div>
+    </article>
+<article class="topic-card">
+      <div class="card-icon">TIGER</div>
+      <div class="card-body">
+        <span class="eyebrow">Featured topic</span>
+        <h3>PROJECT TIGER</h3>
+        <p>Project Tiger is a wildlife conservation movement initiated in India in 1973 to protect Bengal tigers.</p>
+        <a class="card-link" href="flora.html">Explore topic <span>→</span></a>
+      </div>
+    </article>
+<article class="topic-card">
+      <div class="card-icon">CARE</div>
+      <div class="card-body">
+        <span class="eyebrow">Featured topic</span>
+        <h3>DRUG ADDICTION</h3>
+        <p>Drug addiction is a disease that affects a person's brain and behavior and leads to an inability to control the use of drugs.</p>
+        <a class="card-link" href="web.html">Explore topic <span>→</span></a>
+      </div>
+    </article>
+<article class="topic-card">
+      <div class="card-icon">CODE</div>
+      <div class="card-body">
+        <span class="eyebrow">Featured topic</span>
+        <h3>MACHINE LANGUAGE</h3>
+        <p>Machine language is a low-level programming language made out of binary numbers or bits that can only be read by machines.</p>
+        <a class="card-link" href="compprogram.html">Explore topic <span>→</span></a>
+      </div>
+    </article>
+        </div>
+        
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-number" id="visits">1,820+</div>
+            <div class="stat-label">Visits</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">7.5</div>
+            <div class="stat-label">Web rating</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">1+</div>
+            <div class="stat-label">Years of Experience</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mission" id="missions">
+      <div class="container mission-box">
+        <div class="mission-mark">I</div>
+        <blockquote>
+          “Our mission is to democratize education by providing free, high-quality educational resources that nurture curiosity, foster critical thinking, and inspire a lifelong love of learning.”
+        </blockquote>
+        <cite>— JOHAN JOHN MATHEW, FOUNDER &amp; CEO</cite>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">INTEL<span>LECT</span></div>
+          <p class="footer-copy">Making quality online education accessible to all.</p>
+        </div>
+
+        <div>
+          <div class="footer-title">Company</div>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="form.html">Support us</a></li>
+            <li><a href="portfolio.html" target="_blank">Developer</a></li>
+            <li><a href="disclaimer.html" target="_blank">Disclaimer</a></li>
+            <li><a href="#missions">Mission</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-title">Get in touch</div>
+          <ul class="footer-links">
+            <li><a href="mailto:intellectsupport@gmail.com">intellectsupport@gmail.com</a></li>
+            <li><a href="tel:+910082452944">+91 008 245 2944</a></li>
+            <li><a href="attain.html" target="_blank">Attain</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">© 2023–26, INTELLECT.com · All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <button id="chat-toggle" aria-label="Open chatbot">✦</button>
+
+  <div id="chatbot">
+    <div class="chat-header">
+      <span>Chatbot | INTELLECT</span>
+      <button id="close-chat" style="border:0;background:none;color:white;font-size:20px;cursor:pointer;">&times;</button>
+    </div>
+    <div id="chatbox"></div>
+    <div class="chat-input">
+      <input type="text" id="userinput" placeholder="Type a message...">
+      <button id="sendbtn">Send</button>
+    </div>
+  </div>
+
+  <script>
+    const responses = {
+      "hello": "Hi there! How can I assist you today?",
+      "hlo": "Hi there! How can I assist you today?",
+      "hi": "Hi there! How can I assist you today?",
+      "intellect": "Here you will get notes and a lot of information. INTELLECT guides you and helps you with your learning and projects.",
+      "about intellect": "Here you will get notes and a lot of information. INTELLECT guides you and helps you with your learning and projects.",
+      "about developer": "Want to know more about the developer? Visit the <a href='portfolio.html' target='_blank'>Developer Page</a>.",
+      "developer": "Want to know more about the developer? Visit the <a href='portfolio.html' target='_blank'>Developer Page</a>.",
+      "how are you": "I'm just a bot, but I'm here to help you!",
+      "how r u": "I'm just a bot, but I'm here to help you!",
+      "need help": "How can I help you today?",
+      "bye": "Goodbye! Have a great day!",
+      "thank u": "It's my pleasure 😊",
+      "thank you": "It's my pleasure 😊",
+      "drugs": "Want to know more about drugs? Visit our <a href='web.html' target='_blank'>Drug Page</a>.",
+      "drug": "Want to know more about drugs? Visit our <a href='web.html' target='_blank'>Drug Page</a>.",
+      "cyber security": "Want to know more about Cyber Security? Visit our <a href='web2.html' target='_blank'>Cyber Security Page</a>.",
+      "hacking": "Want to know more about hacking? Visit our <a href='web2.html' target='_blank'>Hacking Page</a>.",
+      "ai": "Want to know more about AI? Visit our <a href='aii.html' target='_blank'>AI Page</a>.",
+      "deforestation": "Want to know more about deforestation? Visit our <a href='para.html' target='_blank'>Deforestation Page</a>.",
+      "machine language": "Want to know more about machine language? Visit our <a href='compprogram.html' target='_blank'>Machine Language Page</a>.",
+      "computer programming": "Want to know more about computer programming? Visit our <a href='compprogram.html' target='_blank'>Computer Programming Page</a>.",
+      "computer network": "Want to know more about computer networks? Visit our <a href='networks.html' target='_blank'>Computer Network Page</a>.",
+      "flora and fauna": "Want to know more about flora and fauna? Visit our <a href='flora.html' target='_blank'>Flora and Fauna Page</a>.",
+      "flora": "Want to know more about flora? Visit our <a href='flora.html' target='_blank'>Flora Page</a>.",
+      "fauna": "Want to know more about fauna? Visit our <a href='flora.html' target='_blank'>Fauna Page</a>.",
+      "project tiger": "Want to know more about Project Tiger? Visit our <a href='flora.html' target='_blank'>Project Tiger Page</a>.",
+      "cloud computing": "Want to know more about Cloud Computing? Visit our <a href='cloud.html' target='_blank'>Cloud Computing Page</a>.",
+      "tips for learning": "Visit our learning guide website <a href='attain.html' target='_blank'>Attain</a>.",
+      "tips for improving memory": "Visit our learning guide website <a href='attain.html#memory' target='_blank'>Memory Improvement Page</a>.",
+      "default": "Oops, I'm sorry, I didn't understand that."
+    };
+
+    const chatbot = document.getElementById("chatbot");
+    const chatbox = document.getElementById("chatbox");
+    const input = document.getElementById("userinput");
+
+    document.getElementById("chat-toggle").addEventListener("click", () => {
+      chatbot.style.display = chatbot.style.display === "block" ? "none" : "block";
+      if (chatbot.style.display === "block") input.focus();
+    });
+
+    document.getElementById("close-chat").addEventListener("click", () => chatbot.style.display = "none");
+    document.getElementById("sendbtn").addEventListener("click", sendMessage);
+    input.addEventListener("keydown", e => { if (e.key === "Enter") sendMessage(); });
+
+    function sendMessage() {
+      const value = input.value.trim();
+      if (!value) return;
+      appendMessage("user", value);
+      input.value = "";
+      const response = responses[value.toLowerCase()] || responses.default;
+      setTimeout(() => appendMessage("bot", response), 350);
+    }
+
+    function appendMessage(sender, message) {
+      const el = document.createElement("div");
+      el.className = "message " + sender;
+      el.innerHTML = message;
+      chatbox.appendChild(el);
+      chatbox.scrollTop = chatbox.scrollHeight;
+    }
+  </script>
+</body>
+</html>
