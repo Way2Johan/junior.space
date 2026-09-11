@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Send feedback or support JUNIOR.SPACE.">
   <title>Feedback &amp; Support | JUNIOR.SPACE</title>
   <link rel="icon" type="image/x-icon" href="olp/logo5.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #f6f8fb;
@@ -296,26 +295,26 @@
     <section class="section">
       <div class="container">
         <div class="form-wrap">
-          <form id="feedback-form" novalidate>
+          <form id="feedback-form" novalidate="">
             <div class="row-2">
               <div class="field">
                 <label for="fname">Name</label>
-                <input type="text" id="fname" name="name" placeholder="Your name" required>
+                <input type="text" id="fname" name="name" placeholder="Your name" required="">
               </div>
               <div class="field">
                 <label for="femail">Email</label>
-                <input type="email" id="femail" name="email" placeholder="you@example.com" required>
+                <input type="email" id="femail" name="email" placeholder="you@example.com" required="">
               </div>
             </div>
 
             <div class="field">
               <label for="fsubject">Subject</label>
-              <input type="text" id="fsubject" name="subject" placeholder="What's this about?" required>
+              <input type="text" id="fsubject" name="subject" placeholder="What's this about?" required="">
             </div>
 
             <div class="field">
               <label for="fmessage">Message</label>
-              <textarea id="fmessage" name="message" placeholder="Tell us more..." required></textarea>
+              <textarea id="fmessage" name="message" placeholder="Tell us more..." required=""></textarea>
             </div>
 
             <button class="submit-btn" type="submit" id="submit-btn">Send feedback</button>
@@ -366,7 +365,7 @@
   <div id="chatbot">
     <div class="chat-header">
       <span>Chatbot | INTELLECT</span>
-      <button id="close-chat" style="border:0;background:none;color:white;font-size:20px;cursor:pointer;">&times;</button>
+      <button id="close-chat" style="border:0;background:none;color:white;font-size:20px;cursor:pointer;">×</button>
     </div>
     <div id="chatbox"></div>
     <div class="chat-input">
@@ -404,7 +403,7 @@
 
   <script>
     /* ---------- Feedback form → Google Sheet ---------- */
-    const SCRIPT_URL = "PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx3ukgK21kfIv-TlLIlsv4t08SDi0kWxpaCcYFGxw6Klsk0GfQAsQ5Vs4or64FNA9KB/exec";
 
     const feedbackForm = document.getElementById("feedback-form");
     const submitBtn = document.getElementById("submit-btn");
@@ -525,5 +524,2500 @@
       chatbox.scrollTop = chatbox.scrollHeight;
     }
   </script>
+
+
+</body></html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Send feedback or support JUNIOR.SPACE.">
+  <title>Feedback &amp; Support | JUNIOR.SPACE</title>
+  <link rel="icon" type="image/x-icon" href="olp/logo5.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --surface: #ffffff;
+      --text: #101828;
+      --muted: #667085;
+      --line: #e4e7ec;
+      --primary: #3157d5;
+      --primary-dark: #203da5;
+      --accent: #15a37b;
+      --dark: #0b1220;
+      --shadow: 0 18px 50px rgba(16, 24, 40, .09);
+      --radius: 24px;
+      --danger: #d92d20;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+
+    .container { width: min(1160px, calc(100% - 40px)); margin: auto; }
+
+    /* Navigation */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,.86);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(228,231,236,.8);
+    }
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .brand {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: -.04em;
+    }
+    .brand span { color: var(--primary); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+    }
+    .nav-links a {
+      padding: 10px 14px;
+      color: #475467;
+      font-size: .92rem;
+      font-weight: 600;
+      border-radius: 10px;
+      transition: .2s ease;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--primary); background: #eef2ff; }
+    .contact-btn {
+      border: 0;
+      background: var(--dark);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+    .contact-btn:hover { transform: translateY(-2px); background: var(--primary); }
+
+    /* Page header */
+    .page-header {
+      padding: 64px 0 50px;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(49,87,213,.14), transparent 30%),
+        radial-gradient(circle at 10% 90%, rgba(21,163,123,.10), transparent 28%),
+        var(--surface);
+      border-bottom: 1px solid var(--line);
+      text-align: center;
+    }
+    .badge {
+      display: inline-flex;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: var(--primary);
+      font-size: .78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .page-header h1 {
+      margin: 18px auto 0;
+      max-width: 640px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      letter-spacing: -.05em;
+      line-height: 1.05;
+    }
+    .page-header h1 .accent { color: var(--primary); }
+    .page-header p {
+      margin: 16px auto 0;
+      max-width: 520px;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    /* Form section */
+    .section { padding: 70px 0 90px; }
+    .form-wrap {
+      max-width: 620px;
+      margin: auto;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 40px;
+    }
+    .field { margin-bottom: 20px; }
+    .field label {
+      display: block;
+      font-size: .85rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #344054;
+    }
+    .field input,
+    .field textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: #f9fafb;
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: .95rem;
+      outline: none;
+      transition: .2s ease;
+      color: var(--text);
+    }
+    .field input:focus,
+    .field textarea:focus {
+      border-color: var(--primary);
+      background: white;
+      box-shadow: 0 0 0 3px rgba(49,87,213,.12);
+    }
+    .field textarea { resize: vertical; min-height: 130px; }
+    .row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .submit-btn {
+      width: 100%;
+      border: 0;
+      background: var(--primary);
+      color: white;
+      padding: 14px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: .98rem;
+      cursor: pointer;
+      transition: .2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .submit-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+    .submit-btn:disabled { opacity: .65; cursor: not-allowed; transform: none; }
+
+    .form-status {
+      margin-top: 16px;
+      padding: 12px 14px;
+      border-radius: 10px;
+      font-size: .88rem;
+      font-weight: 600;
+      display: none;
+    }
+    .form-status.success { display: block; background: #ecfdf3; color: #067647; border: 1px solid #abefc6; }
+    .form-status.error { display: block; background: #fef3f2; color: var(--danger); border: 1px solid #fecdca; }
+
+    /* Alt contact */
+    .alt-contact {
+      max-width: 620px;
+      margin: 30px auto 0;
+      display: flex;
+      justify-content: center;
+      gap: 26px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+    .alt-contact a { font-weight: 700; color: var(--primary); }
+
+    /* Footer */
+    footer { background: #070b14; color: white; padding: 55px 0 25px; }
+    .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 50px; }
+    .footer-brand { font-family: "Space Grotesk", sans-serif; font-size: 2rem; font-weight: 800; }
+    .footer-brand span { color: #8ee3c8; }
+    .footer-copy { max-width: 390px; margin-top: 12px; color: #98a2b3; }
+    .footer-title { font-size: .8rem; text-transform: uppercase; letter-spacing: .1em; color: #98a2b3; font-weight: 800; }
+    .footer-links { list-style: none; margin-top: 14px; }
+    .footer-links li + li { margin-top: 9px; }
+    .footer-links a { color: #d0d5dd; }
+    .footer-links a:hover { color: white; }
+    .footer-bottom {
+      margin-top: 45px;
+      padding-top: 20px;
+      border-top: 1px solid #202938;
+      color: #667085;
+      font-size: .8rem;
+      text-align: center;
+    }
+
+    /* Chatbot */
+    #chat-toggle {
+      position: fixed; right: 24px; bottom: 24px; z-index: 200;
+      width: 56px; height: 56px; border: 0; border-radius: 50%;
+      background: var(--primary); color: white; font-size: 1.35rem;
+      cursor: pointer; box-shadow: 0 12px 28px rgba(49,87,213,.35);
+    }
+    #chatbot {
+      position: fixed; right: 24px; bottom: 92px; z-index: 199;
+      width: min(360px, calc(100vw - 32px)); background: white;
+      border: 1px solid var(--line); border-radius: 20px; overflow: hidden;
+      box-shadow: 0 25px 70px rgba(16,24,40,.18); display: none;
+    }
+    .chat-header { padding: 16px 18px; background: var(--dark); color: white; font-weight: 800; display: flex; justify-content: space-between; }
+    #chatbox { height: 250px; overflow-y: auto; padding: 15px; background: #f8fafc; }
+    .message { max-width: 85%; margin-bottom: 10px; padding: 9px 12px; border-radius: 12px; font-size: .88rem; }
+    .user { margin-left: auto; background: var(--primary); color: white; }
+    .bot { background: white; border: 1px solid var(--line); }
+    .chat-input { display: flex; border-top: 1px solid var(--line); }
+    .chat-input input { flex: 1; border: 0; padding: 13px; outline: none; }
+    .chat-input button { border: 0; padding: 0 17px; background: var(--primary); color: white; cursor: pointer; font-weight: 700; }
+
+    @media (max-width: 850px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .container { width: min(100% - 28px, 1160px); }
+      .nav-inner { min-height: 64px; }
+      .nav-links { gap: 0; }
+      .nav-links a { padding: 8px; font-size: .78rem; }
+      .contact-btn { display: none; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .form-wrap { padding: 26px; }
+      .row-2 { grid-template-columns: 1fr; }
+      .page-header { padding: 46px 0 36px; }
+      .section { padding: 46px 0 70px; }
+    }
+  </style>
+</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Send feedback or support JUNIOR.SPACE.">
+<title>Feedback &amp; Support | JUNIOR.SPACE</title>
+<link rel="icon" type="image/x-icon" href="olp/logo5.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+    :root {
+      --bg: #f6f8fb;
+      --surface: #ffffff;
+      --text: #101828;
+      --muted: #667085;
+      --line: #e4e7ec;
+      --primary: #3157d5;
+      --primary-dark: #203da5;
+      --accent: #15a37b;
+      --dark: #0b1220;
+      --shadow: 0 18px 50px rgba(16, 24, 40, .09);
+      --radius: 24px;
+      --danger: #d92d20;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+
+    .container { width: min(1160px, calc(100% - 40px)); margin: auto; }
+
+    /* Navigation */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,.86);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(228,231,236,.8);
+    }
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .brand {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: -.04em;
+    }
+    .brand span { color: var(--primary); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+    }
+    .nav-links a {
+      padding: 10px 14px;
+      color: #475467;
+      font-size: .92rem;
+      font-weight: 600;
+      border-radius: 10px;
+      transition: .2s ease;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--primary); background: #eef2ff; }
+    .contact-btn {
+      border: 0;
+      background: var(--dark);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+    .contact-btn:hover { transform: translateY(-2px); background: var(--primary); }
+
+    /* Page header */
+    .page-header {
+      padding: 64px 0 50px;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(49,87,213,.14), transparent 30%),
+        radial-gradient(circle at 10% 90%, rgba(21,163,123,.10), transparent 28%),
+        var(--surface);
+      border-bottom: 1px solid var(--line);
+      text-align: center;
+    }
+    .badge {
+      display: inline-flex;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: var(--primary);
+      font-size: .78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .page-header h1 {
+      margin: 18px auto 0;
+      max-width: 640px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      letter-spacing: -.05em;
+      line-height: 1.05;
+    }
+    .page-header h1 .accent { color: var(--primary); }
+    .page-header p {
+      margin: 16px auto 0;
+      max-width: 520px;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    /* Form section */
+    .section { padding: 70px 0 90px; }
+    .form-wrap {
+      max-width: 620px;
+      margin: auto;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 40px;
+    }
+    .field { margin-bottom: 20px; }
+    .field label {
+      display: block;
+      font-size: .85rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #344054;
+    }
+    .field input,
+    .field textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: #f9fafb;
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: .95rem;
+      outline: none;
+      transition: .2s ease;
+      color: var(--text);
+    }
+    .field input:focus,
+    .field textarea:focus {
+      border-color: var(--primary);
+      background: white;
+      box-shadow: 0 0 0 3px rgba(49,87,213,.12);
+    }
+    .field textarea { resize: vertical; min-height: 130px; }
+    .row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .submit-btn {
+      width: 100%;
+      border: 0;
+      background: var(--primary);
+      color: white;
+      padding: 14px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: .98rem;
+      cursor: pointer;
+      transition: .2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .submit-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+    .submit-btn:disabled { opacity: .65; cursor: not-allowed; transform: none; }
+
+    .form-status {
+      margin-top: 16px;
+      padding: 12px 14px;
+      border-radius: 10px;
+      font-size: .88rem;
+      font-weight: 600;
+      display: none;
+    }
+    .form-status.success { display: block; background: #ecfdf3; color: #067647; border: 1px solid #abefc6; }
+    .form-status.error { display: block; background: #fef3f2; color: var(--danger); border: 1px solid #fecdca; }
+
+    /* Alt contact */
+    .alt-contact {
+      max-width: 620px;
+      margin: 30px auto 0;
+      display: flex;
+      justify-content: center;
+      gap: 26px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+    .alt-contact a { font-weight: 700; color: var(--primary); }
+
+    /* Footer */
+    footer { background: #070b14; color: white; padding: 55px 0 25px; }
+    .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 50px; }
+    .footer-brand { font-family: "Space Grotesk", sans-serif; font-size: 2rem; font-weight: 800; }
+    .footer-brand span { color: #8ee3c8; }
+    .footer-copy { max-width: 390px; margin-top: 12px; color: #98a2b3; }
+    .footer-title { font-size: .8rem; text-transform: uppercase; letter-spacing: .1em; color: #98a2b3; font-weight: 800; }
+    .footer-links { list-style: none; margin-top: 14px; }
+    .footer-links li + li { margin-top: 9px; }
+    .footer-links a { color: #d0d5dd; }
+    .footer-links a:hover { color: white; }
+    .footer-bottom {
+      margin-top: 45px;
+      padding-top: 20px;
+      border-top: 1px solid #202938;
+      color: #667085;
+      font-size: .8rem;
+      text-align: center;
+    }
+
+    /* Chatbot */
+    #chat-toggle {
+      position: fixed; right: 24px; bottom: 24px; z-index: 200;
+      width: 56px; height: 56px; border: 0; border-radius: 50%;
+      background: var(--primary); color: white; font-size: 1.35rem;
+      cursor: pointer; box-shadow: 0 12px 28px rgba(49,87,213,.35);
+    }
+    #chatbot {
+      position: fixed; right: 24px; bottom: 92px; z-index: 199;
+      width: min(360px, calc(100vw - 32px)); background: white;
+      border: 1px solid var(--line); border-radius: 20px; overflow: hidden;
+      box-shadow: 0 25px 70px rgba(16,24,40,.18); display: none;
+    }
+    .chat-header { padding: 16px 18px; background: var(--dark); color: white; font-weight: 800; display: flex; justify-content: space-between; }
+    #chatbox { height: 250px; overflow-y: auto; padding: 15px; background: #f8fafc; }
+    .message { max-width: 85%; margin-bottom: 10px; padding: 9px 12px; border-radius: 12px; font-size: .88rem; }
+    .user { margin-left: auto; background: var(--primary); color: white; }
+    .bot { background: white; border: 1px solid var(--line); }
+    .chat-input { display: flex; border-top: 1px solid var(--line); }
+    .chat-input input { flex: 1; border: 0; padding: 13px; outline: none; }
+    .chat-input button { border: 0; padding: 0 17px; background: var(--primary); color: white; cursor: pointer; font-weight: 700; }
+
+    @media (max-width: 850px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .container { width: min(100% - 28px, 1160px); }
+      .nav-inner { min-height: 64px; }
+      .nav-links { gap: 0; }
+      .nav-links a { padding: 8px; font-size: .78rem; }
+      .contact-btn { display: none; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .form-wrap { padding: 26px; }
+      .row-2 { grid-template-columns: 1fr; }
+      .page-header { padding: 46px 0 36px; }
+      .section { padding: 46px 0 70px; }
+    }
+  </style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Send feedback or support JUNIOR.SPACE.">
+  <title>Feedback &amp; Support | JUNIOR.SPACE</title>
+  <link rel="icon" type="image/x-icon" href="olp/logo5.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --surface: #ffffff;
+      --text: #101828;
+      --muted: #667085;
+      --line: #e4e7ec;
+      --primary: #3157d5;
+      --primary-dark: #203da5;
+      --accent: #15a37b;
+      --dark: #0b1220;
+      --shadow: 0 18px 50px rgba(16, 24, 40, .09);
+      --radius: 24px;
+      --danger: #d92d20;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+
+    .container { width: min(1160px, calc(100% - 40px)); margin: auto; }
+
+    /* Navigation */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,.86);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(228,231,236,.8);
+    }
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .brand {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: -.04em;
+    }
+    .brand span { color: var(--primary); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+    }
+    .nav-links a {
+      padding: 10px 14px;
+      color: #475467;
+      font-size: .92rem;
+      font-weight: 600;
+      border-radius: 10px;
+      transition: .2s ease;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--primary); background: #eef2ff; }
+    .contact-btn {
+      border: 0;
+      background: var(--dark);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+    .contact-btn:hover { transform: translateY(-2px); background: var(--primary); }
+
+    /* Page header */
+    .page-header {
+      padding: 64px 0 50px;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(49,87,213,.14), transparent 30%),
+        radial-gradient(circle at 10% 90%, rgba(21,163,123,.10), transparent 28%),
+        var(--surface);
+      border-bottom: 1px solid var(--line);
+      text-align: center;
+    }
+    .badge {
+      display: inline-flex;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: var(--primary);
+      font-size: .78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .page-header h1 {
+      margin: 18px auto 0;
+      max-width: 640px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      letter-spacing: -.05em;
+      line-height: 1.05;
+    }
+    .page-header h1 .accent { color: var(--primary); }
+    .page-header p {
+      margin: 16px auto 0;
+      max-width: 520px;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    /* Form section */
+    .section { padding: 70px 0 90px; }
+    .form-wrap {
+      max-width: 620px;
+      margin: auto;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 40px;
+    }
+    .field { margin-bottom: 20px; }
+    .field label {
+      display: block;
+      font-size: .85rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #344054;
+    }
+    .field input,
+    .field textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: #f9fafb;
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: .95rem;
+      outline: none;
+      transition: .2s ease;
+      color: var(--text);
+    }
+    .field input:focus,
+    .field textarea:focus {
+      border-color: var(--primary);
+      background: white;
+      box-shadow: 0 0 0 3px rgba(49,87,213,.12);
+    }
+    .field textarea { resize: vertical; min-height: 130px; }
+    .row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .submit-btn {
+      width: 100%;
+      border: 0;
+      background: var(--primary);
+      color: white;
+      padding: 14px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: .98rem;
+      cursor: pointer;
+      transition: .2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .submit-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+    .submit-btn:disabled { opacity: .65; cursor: not-allowed; transform: none; }
+
+    .form-status {
+      margin-top: 16px;
+      padding: 12px 14px;
+      border-radius: 10px;
+      font-size: .88rem;
+      font-weight: 600;
+      display: none;
+    }
+    .form-status.success { display: block; background: #ecfdf3; color: #067647; border: 1px solid #abefc6; }
+    .form-status.error { display: block; background: #fef3f2; color: var(--danger); border: 1px solid #fecdca; }
+
+    /* Alt contact */
+    .alt-contact {
+      max-width: 620px;
+      margin: 30px auto 0;
+      display: flex;
+      justify-content: center;
+      gap: 26px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+    .alt-contact a { font-weight: 700; color: var(--primary); }
+
+    /* Footer */
+    footer { background: #070b14; color: white; padding: 55px 0 25px; }
+    .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 50px; }
+    .footer-brand { font-family: "Space Grotesk", sans-serif; font-size: 2rem; font-weight: 800; }
+    .footer-brand span { color: #8ee3c8; }
+    .footer-copy { max-width: 390px; margin-top: 12px; color: #98a2b3; }
+    .footer-title { font-size: .8rem; text-transform: uppercase; letter-spacing: .1em; color: #98a2b3; font-weight: 800; }
+    .footer-links { list-style: none; margin-top: 14px; }
+    .footer-links li + li { margin-top: 9px; }
+    .footer-links a { color: #d0d5dd; }
+    .footer-links a:hover { color: white; }
+    .footer-bottom {
+      margin-top: 45px;
+      padding-top: 20px;
+      border-top: 1px solid #202938;
+      color: #667085;
+      font-size: .8rem;
+      text-align: center;
+    }
+
+    /* Chatbot */
+    #chat-toggle {
+      position: fixed; right: 24px; bottom: 24px; z-index: 200;
+      width: 56px; height: 56px; border: 0; border-radius: 50%;
+      background: var(--primary); color: white; font-size: 1.35rem;
+      cursor: pointer; box-shadow: 0 12px 28px rgba(49,87,213,.35);
+    }
+    #chatbot {
+      position: fixed; right: 24px; bottom: 92px; z-index: 199;
+      width: min(360px, calc(100vw - 32px)); background: white;
+      border: 1px solid var(--line); border-radius: 20px; overflow: hidden;
+      box-shadow: 0 25px 70px rgba(16,24,40,.18); display: none;
+    }
+    .chat-header { padding: 16px 18px; background: var(--dark); color: white; font-weight: 800; display: flex; justify-content: space-between; }
+    #chatbox { height: 250px; overflow-y: auto; padding: 15px; background: #f8fafc; }
+    .message { max-width: 85%; margin-bottom: 10px; padding: 9px 12px; border-radius: 12px; font-size: .88rem; }
+    .user { margin-left: auto; background: var(--primary); color: white; }
+    .bot { background: white; border: 1px solid var(--line); }
+    .chat-input { display: flex; border-top: 1px solid var(--line); }
+    .chat-input input { flex: 1; border: 0; padding: 13px; outline: none; }
+    .chat-input button { border: 0; padding: 0 17px; background: var(--primary); color: white; cursor: pointer; font-weight: 700; }
+
+    @media (max-width: 850px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .container { width: min(100% - 28px, 1160px); }
+      .nav-inner { min-height: 64px; }
+      .nav-links { gap: 0; }
+      .nav-links a { padding: 8px; font-size: .78rem; }
+      .contact-btn { display: none; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .form-wrap { padding: 26px; }
+      .row-2 { grid-template-columns: 1fr; }
+      .page-header { padding: 46px 0 36px; }
+      .section { padding: 46px 0 70px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">JUNIOR<span>.SPACE</span></a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="mweb.html">Contents</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="form.html" class="active">Support</a></li>
+        </ul>
+      </nav>
+      <button class="contact-btn" onclick="alert('Contact: +91 008 245 2944')">Contact</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <span class="badge">We'd love to hear from you</span>
+        <h1>Send us your <span class="accent">feedback.</span></h1>
+        <p>Found something unclear, spotted an error, or just want to say hi? Fill out the form below — it goes straight to our team.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="form-wrap">
+          <form id="feedback-form" novalidate="">
+            <div class="row-2">
+              <div class="field">
+                <label for="fname">Name</label>
+                <input type="text" id="fname" name="name" placeholder="Your name" required="">
+              </div>
+              <div class="field">
+                <label for="femail">Email</label>
+                <input type="email" id="femail" name="email" placeholder="you@example.com" required="">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="fsubject">Subject</label>
+              <input type="text" id="fsubject" name="subject" placeholder="What's this about?" required="">
+            </div>
+
+            <div class="field">
+              <label for="fmessage">Message</label>
+              <textarea id="fmessage" name="message" placeholder="Tell us more..." required=""></textarea>
+            </div>
+
+            <button class="submit-btn" type="submit" id="submit-btn">Send feedback</button>
+
+            <div class="form-status" id="form-status"></div>
+          </form>
+        </div>
+
+        <div class="alt-contact">
+          <a href="mailto:intellectsupport@gmail.com">junior.support@gmail.com</a>
+          <a href="tel:+910082452944">+91 008 245 2944</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">JUNIOR<span>.SPACE</span></div>
+          <p class="footer-copy">Making quality online education accessible to all.</p>
+        </div>
+        <div>
+          <div class="footer-title">Company</div>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="form.html">Support us</a></li>
+            <li><a href="portfolio.html" target="_blank">Developer</a></li>
+            <li><a href="disclaimer.html" target="_blank">Disclaimer</a></li>
+            <li><a href="index.html#missions">Mission</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-title">Get in touch</div>
+          <ul class="footer-links">
+            <li><a href="mailto:intellectsupport@gmail.com">junior.support@gmail.com</a></li>
+            <li><a href="tel:+910082452944">+91 008 245 2944</a></li>
+            <li><a href="attain.html" target="_blank">Attain</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2023–26, junior.international.com · All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <button id="chat-toggle" aria-label="Open chatbot">✦</button>
+  <div id="chatbot">
+    <div class="chat-header">
+      <span>Chatbot | INTELLECT</span>
+      <button id="close-chat" style="border:0;background:none;color:white;font-size:20px;cursor:pointer;">×</button>
+    </div>
+    <div id="chatbox"></div>
+    <div class="chat-input">
+      <input type="text" id="userinput" placeholder="Type a message...">
+      <button id="sendbtn">Send</button>
+    </div>
+  </div>
+
+  <!--
+    ============================================================
+    GOOGLE APPS SCRIPT — paste this into Extensions > Apps Script
+    on the Google Sheet you want responses saved to, then deploy
+    it as a Web App (Execute as: Me, Who has access: Anyone).
+    ============================================================
+
+    function doPost(e) {
+      var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+      var data = JSON.parse(e.postData.contents);
+      sheet.appendRow([
+        new Date(),
+        data.name,
+        data.email,
+        data.subject,
+        data.message
+      ]);
+      return ContentService
+        .createTextOutput(JSON.stringify({ result: "success" }))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
+
+    Copy the /exec URL from the deployment and paste it below as
+    SCRIPT_URL.
+    ============================================================
+  -->
+
+  <script>
+    /* ---------- Feedback form → Google Sheet ---------- */
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx3ukgK21kfIv-TlLIlsv4t08SDi0kWxpaCcYFGxw6Klsk0GfQAsQ5Vs4or64FNA9KB/exec";
+
+    const feedbackForm = document.getElementById("feedback-form");
+    const submitBtn = document.getElementById("submit-btn");
+    const formStatus = document.getElementById("form-status");
+
+    feedbackForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      if (SCRIPT_URL.includes("PASTE_YOUR")) {
+        formStatus.className = "form-status error";
+        formStatus.textContent = "Form isn't connected yet — add your Apps Script URL in form.html.";
+        return;
+      }
+
+      const payload = {
+        name: document.getElementById("fname").value.trim(),
+        email: document.getElementById("femail").value.trim(),
+        subject: document.getElementById("fsubject").value.trim(),
+        message: document.getElementById("fmessage").value.trim()
+      };
+
+      if (!payload.name || !payload.email || !payload.subject || !payload.message) {
+        formStatus.className = "form-status error";
+        formStatus.textContent = "Please fill in every field before sending.";
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending...";
+      formStatus.className = "form-status";
+      formStatus.textContent = "";
+
+      // Apps Script web apps don't return readable CORS headers for
+      // cross-origin requests, so we send with mode: "no-cors" and
+      // treat a resolved fetch as success.
+      fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(payload)
+      })
+        .then(() => {
+          formStatus.className = "form-status success";
+          formStatus.textContent = "Thanks! Your feedback has been sent.";
+          feedbackForm.reset();
+        })
+        .catch(() => {
+          formStatus.className = "form-status error";
+          formStatus.textContent = "Something went wrong. Please try again or email us directly.";
+        })
+        .finally(() => {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Send feedback";
+        });
+    });
+
+    /* ---------- Chatbot (shared with other pages) ---------- */
+    const responses = {
+      "hello": "Hi there! How can I assist you today?",
+      "hlo": "Hi there! How can I assist you today?",
+      "hi": "Hi there! How can I assist you today?",
+      "intellect": "Here you will get notes and a lot of information. INTELLECT guides you and helps you with your learning and projects.",
+      "about intellect": "Here you will get notes and a lot of information. INTELLECT guides you and helps you with your learning and projects.",
+      "about developer": "Want to know more about the developer? Visit the <a href='portfolio.html' target='_blank'>Developer Page</a>.",
+      "developer": "Want to know more about the developer? Visit the <a href='portfolio.html' target='_blank'>Developer Page</a>.",
+      "how are you": "I'm just a bot, but I'm here to help you!",
+      "how r u": "I'm just a bot, but I'm here to help you!",
+      "need help": "How can I help you today?",
+      "bye": "Goodbye! Have a great day!",
+      "thank u": "It's my pleasure 😊",
+      "thank you": "It's my pleasure 😊",
+      "drugs": "Want to know more about drugs? Visit our <a href='web.html' target='_blank'>Drug Page</a>.",
+      "drug": "Want to know more about drugs? Visit our <a href='web.html' target='_blank'>Drug Page</a>.",
+      "cyber security": "Want to know more about Cyber Security? Visit our <a href='web2.html' target='_blank'>Cyber Security Page</a>.",
+      "hacking": "Want to know more about hacking? Visit our <a href='web2.html' target='_blank'>Hacking Page</a>.",
+      "ai": "Want to know more about AI? Visit our <a href='aii.html' target='_blank'>AI Page</a>.",
+      "deforestation": "Want to know more about deforestation? Visit our <a href='para.html' target='_blank'>Deforestation Page</a>.",
+      "machine language": "Want to know more about machine language? Visit our <a href='compprogram.html' target='_blank'>Machine Language Page</a>.",
+      "computer programming": "Want to know more about computer programming? Visit our <a href='compprogram.html' target='_blank'>Computer Programming Page</a>.",
+      "computer network": "Want to know more about computer networks? Visit our <a href='networks.html' target='_blank'>Computer Network Page</a>.",
+      "flora and fauna": "Want to know more about flora and fauna? Visit our <a href='flora.html' target='_blank'>Flora and Fauna Page</a>.",
+      "flora": "Want to know more about flora? Visit our <a href='flora.html' target='_blank'>Flora Page</a>.",
+      "fauna": "Want to know more about fauna? Visit our <a href='flora.html' target='_blank'>Fauna Page</a>.",
+      "project tiger": "Want to know more about Project Tiger? Visit our <a href='flora.html' target='_blank'>Project Tiger Page</a>.",
+      "cloud computing": "Want to know more about Cloud Computing? Visit our <a href='cloud.html' target='_blank'>Cloud Computing Page</a>.",
+      "tips for learning": "Visit our learning guide website <a href='attain.html' target='_blank'>Attain</a>.",
+      "tips for improving memory": "Visit our learning guide website <a href='attain.html#memory' target='_blank'>Memory Improvement Page</a>.",
+      "default": "Oops, I'm sorry, I didn't understand that."
+    };
+
+    const chatbot = document.getElementById("chatbot");
+    const chatbox = document.getElementById("chatbox");
+    const chatInput = document.getElementById("userinput");
+
+    document.getElementById("chat-toggle").addEventListener("click", () => {
+      chatbot.style.display = chatbot.style.display === "block" ? "none" : "block";
+      if (chatbot.style.display === "block") chatInput.focus();
+    });
+
+    document.getElementById("close-chat").addEventListener("click", () => chatbot.style.display = "none");
+    document.getElementById("sendbtn").addEventListener("click", sendMessage);
+    chatInput.addEventListener("keydown", e => { if (e.key === "Enter") sendMessage(); });
+
+    function sendMessage() {
+      const value = chatInput.value.trim();
+      if (!value) return;
+      appendMessage("user", value);
+      chatInput.value = "";
+      const response = responses[value.toLowerCase()] || responses.default;
+      setTimeout(() => appendMessage("bot", response), 350);
+    }
+
+    function appendMessage(sender, message) {
+      const el = document.createElement("div");
+      el.className = "message " + sender;
+      el.innerHTML = message;
+      chatbox.appendChild(el);
+      chatbox.scrollTop = chatbox.scrollHeight;
+    }
+  </script>
+
+
 </body>
-</html>
+<header class="navbar">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">JUNIOR<span>.SPACE</span></a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="mweb.html">Contents</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="form.html" class="active">Support</a></li>
+        </ul>
+      </nav>
+      <button class="contact-btn" onclick="alert('Contact: +91 008 245 2944')">Contact</button>
+    </div>
+  </header>
+<div class="container nav-inner">
+      <a class="brand" href="index.html">JUNIOR<span>.SPACE</span></a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="mweb.html">Contents</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="form.html" class="active">Support</a></li>
+        </ul>
+      </nav>
+      <button class="contact-btn" onclick="alert('Contact: +91 008 245 2944')">Contact</button>
+    </div>
+<a class="brand" href="index.html">JUNIOR<span>.SPACE</span></a>
+<nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="mweb.html">Contents</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="form.html" class="active">Support</a></li>
+        </ul>
+      </nav>
+<button class="contact-btn" onclick="alert('Contact: +91 008 245 2944')">Contact</button>
+<div class="container nav-inner">
+      <a class="brand" href="index.html">JUNIOR<span>.SPACE</span></a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="mweb.html">Contents</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="form.html" class="active">Support</a></li>
+        </ul>
+      </nav>
+      <button class="contact-btn" onclick="alert('Contact: +91 008 245 2944')">Contact</button>
+    </div>
+<header class="navbar">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">JUNIOR<span>.SPACE</span></a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="mweb.html">Contents</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="form.html" class="active">Support</a></li>
+        </ul>
+      </nav>
+      <button class="contact-btn" onclick="alert('Contact: +91 008 245 2944')">Contact</button>
+    </div>
+  </header>
+<main>
+    <section class="page-header">
+      <div class="container">
+        <span class="badge">We'd love to hear from you</span>
+        <h1>Send us your <span class="accent">feedback.</span></h1>
+        <p>Found something unclear, spotted an error, or just want to say hi? Fill out the form below — it goes straight to our team.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="form-wrap">
+          <form id="feedback-form" novalidate="">
+            <div class="row-2">
+              <div class="field">
+                <label for="fname">Name</label>
+                <input type="text" id="fname" name="name" placeholder="Your name" required="">
+              </div>
+              <div class="field">
+                <label for="femail">Email</label>
+                <input type="email" id="femail" name="email" placeholder="you@example.com" required="">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="fsubject">Subject</label>
+              <input type="text" id="fsubject" name="subject" placeholder="What's this about?" required="">
+            </div>
+
+            <div class="field">
+              <label for="fmessage">Message</label>
+              <textarea id="fmessage" name="message" placeholder="Tell us more..." required=""></textarea>
+            </div>
+
+            <button class="submit-btn" type="submit" id="submit-btn">Send feedback</button>
+
+            <div class="form-status" id="form-status"></div>
+          </form>
+        </div>
+
+        <div class="alt-contact">
+          <a href="mailto:intellectsupport@gmail.com">junior.support@gmail.com</a>
+          <a href="tel:+910082452944">+91 008 245 2944</a>
+        </div>
+      </div>
+    </section>
+  </main>
+<section class="page-header">
+      <div class="container">
+        <span class="badge">We'd love to hear from you</span>
+        <h1>Send us your <span class="accent">feedback.</span></h1>
+        <p>Found something unclear, spotted an error, or just want to say hi? Fill out the form below — it goes straight to our team.</p>
+      </div>
+    </section>
+<div class="container">
+        <span class="badge">We'd love to hear from you</span>
+        <h1>Send us your <span class="accent">feedback.</span></h1>
+        <p>Found something unclear, spotted an error, or just want to say hi? Fill out the form below — it goes straight to our team.</p>
+      </div>
+<span class="badge">We'd love to hear from you</span>
+<h1>Send us your <span class="accent">feedback.</span></h1>
+Send us your 
+<span class="accent">feedback.</span>
+<h1>Send us your <span class="accent">feedback.</span></h1>
+<p>Found something unclear, spotted an error, or just want to say hi? Fill out the form below — it goes straight to our team.</p>
+Found something unclear, spotted an error, or just want to say hi? Fill out the form below — it goes straight to our team.
+<p>Found something unclear, spotted an error, or just want to say hi? Fill out the form below — it goes straight to our team.</p>
+<div class="container">
+        <span class="badge">We'd love to hear from you</span>
+        <h1>Send us your <span class="accent">feedback.</span></h1>
+        <p>Found something unclear, spotted an error, or just want to say hi? Fill out the form below — it goes straight to our team.</p>
+      </div>
+<section class="page-header">
+      <div class="container">
+        <span class="badge">We'd love to hear from you</span>
+        <h1>Send us your <span class="accent">feedback.</span></h1>
+        <p>Found something unclear, spotted an error, or just want to say hi? Fill out the form below — it goes straight to our team.</p>
+      </div>
+    </section>
+<section class="section">
+      <div class="container">
+        <div class="form-wrap">
+          <form id="feedback-form" novalidate="">
+            <div class="row-2">
+              <div class="field">
+                <label for="fname">Name</label>
+                <input type="text" id="fname" name="name" placeholder="Your name" required="">
+              </div>
+              <div class="field">
+                <label for="femail">Email</label>
+                <input type="email" id="femail" name="email" placeholder="you@example.com" required="">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="fsubject">Subject</label>
+              <input type="text" id="fsubject" name="subject" placeholder="What's this about?" required="">
+            </div>
+
+            <div class="field">
+              <label for="fmessage">Message</label>
+              <textarea id="fmessage" name="message" placeholder="Tell us more..." required=""></textarea>
+            </div>
+
+            <button class="submit-btn" type="submit" id="submit-btn">Send feedback</button>
+
+            <div class="form-status" id="form-status"></div>
+          </form>
+        </div>
+
+        <div class="alt-contact">
+          <a href="mailto:intellectsupport@gmail.com">junior.support@gmail.com</a>
+          <a href="tel:+910082452944">+91 008 245 2944</a>
+        </div>
+      </div>
+    </section>
+<div class="container">
+        <div class="form-wrap">
+          <form id="feedback-form" novalidate="">
+            <div class="row-2">
+              <div class="field">
+                <label for="fname">Name</label>
+                <input type="text" id="fname" name="name" placeholder="Your name" required="">
+              </div>
+              <div class="field">
+                <label for="femail">Email</label>
+                <input type="email" id="femail" name="email" placeholder="you@example.com" required="">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="fsubject">Subject</label>
+              <input type="text" id="fsubject" name="subject" placeholder="What's this about?" required="">
+            </div>
+
+            <div class="field">
+              <label for="fmessage">Message</label>
+              <textarea id="fmessage" name="message" placeholder="Tell us more..." required=""></textarea>
+            </div>
+
+            <button class="submit-btn" type="submit" id="submit-btn">Send feedback</button>
+
+            <div class="form-status" id="form-status"></div>
+          </form>
+        </div>
+
+        <div class="alt-contact">
+          <a href="mailto:intellectsupport@gmail.com">junior.support@gmail.com</a>
+          <a href="tel:+910082452944">+91 008 245 2944</a>
+        </div>
+      </div>
+<section class="section">
+      <div class="container">
+        <div class="form-wrap">
+          <form id="feedback-form" novalidate="">
+            <div class="row-2">
+              <div class="field">
+                <label for="fname">Name</label>
+                <input type="text" id="fname" name="name" placeholder="Your name" required="">
+              </div>
+              <div class="field">
+                <label for="femail">Email</label>
+                <input type="email" id="femail" name="email" placeholder="you@example.com" required="">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="fsubject">Subject</label>
+              <input type="text" id="fsubject" name="subject" placeholder="What's this about?" required="">
+            </div>
+
+            <div class="field">
+              <label for="fmessage">Message</label>
+              <textarea id="fmessage" name="message" placeholder="Tell us more..." required=""></textarea>
+            </div>
+
+            <button class="submit-btn" type="submit" id="submit-btn">Send feedback</button>
+
+            <div class="form-status" id="form-status"></div>
+          </form>
+        </div>
+
+        <div class="alt-contact">
+          <a href="mailto:intellectsupport@gmail.com">junior.support@gmail.com</a>
+          <a href="tel:+910082452944">+91 008 245 2944</a>
+        </div>
+      </div>
+    </section>
+<main>
+    <section class="page-header">
+      <div class="container">
+        <span class="badge">We'd love to hear from you</span>
+        <h1>Send us your <span class="accent">feedback.</span></h1>
+        <p>Found something unclear, spotted an error, or just want to say hi? Fill out the form below — it goes straight to our team.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="form-wrap">
+          <form id="feedback-form" novalidate="">
+            <div class="row-2">
+              <div class="field">
+                <label for="fname">Name</label>
+                <input type="text" id="fname" name="name" placeholder="Your name" required="">
+              </div>
+              <div class="field">
+                <label for="femail">Email</label>
+                <input type="email" id="femail" name="email" placeholder="you@example.com" required="">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="fsubject">Subject</label>
+              <input type="text" id="fsubject" name="subject" placeholder="What's this about?" required="">
+            </div>
+
+            <div class="field">
+              <label for="fmessage">Message</label>
+              <textarea id="fmessage" name="message" placeholder="Tell us more..." required=""></textarea>
+            </div>
+
+            <button class="submit-btn" type="submit" id="submit-btn">Send feedback</button>
+
+            <div class="form-status" id="form-status"></div>
+          </form>
+        </div>
+
+        <div class="alt-contact">
+          <a href="mailto:intellectsupport@gmail.com">junior.support@gmail.com</a>
+          <a href="tel:+910082452944">+91 008 245 2944</a>
+        </div>
+      </div>
+    </section>
+  </main>
+<footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">JUNIOR<span>.SPACE</span></div>
+          <p class="footer-copy">Making quality online education accessible to all.</p>
+        </div>
+        <div>
+          <div class="footer-title">Company</div>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="form.html">Support us</a></li>
+            <li><a href="portfolio.html" target="_blank">Developer</a></li>
+            <li><a href="disclaimer.html" target="_blank">Disclaimer</a></li>
+            <li><a href="index.html#missions">Mission</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-title">Get in touch</div>
+          <ul class="footer-links">
+            <li><a href="mailto:intellectsupport@gmail.com">junior.support@gmail.com</a></li>
+            <li><a href="tel:+910082452944">+91 008 245 2944</a></li>
+            <li><a href="attain.html" target="_blank">Attain</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2023–26, junior.international.com · All Rights Reserved.</div>
+    </div>
+  </footer>
+<div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">JUNIOR<span>.SPACE</span></div>
+          <p class="footer-copy">Making quality online education accessible to all.</p>
+        </div>
+        <div>
+          <div class="footer-title">Company</div>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="form.html">Support us</a></li>
+            <li><a href="portfolio.html" target="_blank">Developer</a></li>
+            <li><a href="disclaimer.html" target="_blank">Disclaimer</a></li>
+            <li><a href="index.html#missions">Mission</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-title">Get in touch</div>
+          <ul class="footer-links">
+            <li><a href="mailto:intellectsupport@gmail.com">junior.support@gmail.com</a></li>
+            <li><a href="tel:+910082452944">+91 008 245 2944</a></li>
+            <li><a href="attain.html" target="_blank">Attain</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2023–26, junior.international.com · All Rights Reserved.</div>
+    </div>
+<div class="footer-grid">
+        <div>
+          <div class="footer-brand">JUNIOR<span>.SPACE</span></div>
+          <p class="footer-copy">Making quality online education accessible to all.</p>
+        </div>
+        <div>
+          <div class="footer-title">Company</div>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="form.html">Support us</a></li>
+            <li><a href="portfolio.html" target="_blank">Developer</a></li>
+            <li><a href="disclaimer.html" target="_blank">Disclaimer</a></li>
+            <li><a href="index.html#missions">Mission</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-title">Get in touch</div>
+          <ul class="footer-links">
+            <li><a href="mailto:intellectsupport@gmail.com">junior.support@gmail.com</a></li>
+            <li><a href="tel:+910082452944">+91 008 245 2944</a></li>
+            <li><a href="attain.html" target="_blank">Attain</a></li>
+          </ul>
+        </div>
+      </div>
+<div>
+          <div class="footer-brand">JUNIOR<span>.SPACE</span></div>
+          <p class="footer-copy">Making quality online education accessible to all.</p>
+        </div>
+<div class="footer-brand">JUNIOR<span>.SPACE</span></div>
+<p class="footer-copy">Making quality online education accessible to all.</p>
+<div>
+          <div class="footer-brand">JUNIOR<span>.SPACE</span></div>
+          <p class="footer-copy">Making quality online education accessible to all.</p>
+        </div>
+<div>
+          <div class="footer-title">Company</div>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="form.html">Support us</a></li>
+            <li><a href="portfolio.html" target="_blank">Developer</a></li>
+            <li><a href="disclaimer.html" target="_blank">Disclaimer</a></li>
+            <li><a href="index.html#missions">Mission</a></li>
+          </ul>
+        </div>
+<div>
+          <div class="footer-title">Get in touch</div>
+          <ul class="footer-links">
+            <li><a href="mailto:intellectsupport@gmail.com">junior.support@gmail.com</a></li>
+            <li><a href="tel:+910082452944">+91 008 245 2944</a></li>
+            <li><a href="attain.html" target="_blank">Attain</a></li>
+          </ul>
+        </div>
+<div class="footer-grid">
+        <div>
+          <div class="footer-brand">JUNIOR<span>.SPACE</span></div>
+          <p class="footer-copy">Making quality online education accessible to all.</p>
+        </div>
+        <div>
+          <div class="footer-title">Company</div>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="form.html">Support us</a></li>
+            <li><a href="portfolio.html" target="_blank">Developer</a></li>
+            <li><a href="disclaimer.html" target="_blank">Disclaimer</a></li>
+            <li><a href="index.html#missions">Mission</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-title">Get in touch</div>
+          <ul class="footer-links">
+            <li><a href="mailto:intellectsupport@gmail.com">junior.support@gmail.com</a></li>
+            <li><a href="tel:+910082452944">+91 008 245 2944</a></li>
+            <li><a href="attain.html" target="_blank">Attain</a></li>
+          </ul>
+        </div>
+      </div>
+<div class="footer-bottom">© 2023–26, junior.international.com · All Rights Reserved.</div>
+<div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">JUNIOR<span>.SPACE</span></div>
+          <p class="footer-copy">Making quality online education accessible to all.</p>
+        </div>
+        <div>
+          <div class="footer-title">Company</div>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="form.html">Support us</a></li>
+            <li><a href="portfolio.html" target="_blank">Developer</a></li>
+            <li><a href="disclaimer.html" target="_blank">Disclaimer</a></li>
+            <li><a href="index.html#missions">Mission</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-title">Get in touch</div>
+          <ul class="footer-links">
+            <li><a href="mailto:intellectsupport@gmail.com">junior.support@gmail.com</a></li>
+            <li><a href="tel:+910082452944">+91 008 245 2944</a></li>
+            <li><a href="attain.html" target="_blank">Attain</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2023–26, junior.international.com · All Rights Reserved.</div>
+    </div>
+<footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">JUNIOR<span>.SPACE</span></div>
+          <p class="footer-copy">Making quality online education accessible to all.</p>
+        </div>
+        <div>
+          <div class="footer-title">Company</div>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="form.html">Support us</a></li>
+            <li><a href="portfolio.html" target="_blank">Developer</a></li>
+            <li><a href="disclaimer.html" target="_blank">Disclaimer</a></li>
+            <li><a href="index.html#missions">Mission</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-title">Get in touch</div>
+          <ul class="footer-links">
+            <li><a href="mailto:intellectsupport@gmail.com">junior.support@gmail.com</a></li>
+            <li><a href="tel:+910082452944">+91 008 245 2944</a></li>
+            <li><a href="attain.html" target="_blank">Attain</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2023–26, junior.international.com · All Rights Reserved.</div>
+    </div>
+  </footer>
+<button id="chat-toggle" aria-label="Open chatbot">✦</button>
+<div id="chatbot">
+    <div class="chat-header">
+      <span>Chatbot | INTELLECT</span>
+      <button id="close-chat" style="border:0;background:none;color:white;font-size:20px;cursor:pointer;">×</button>
+    </div>
+    <div id="chatbox"></div>
+    <div class="chat-input">
+      <input type="text" id="userinput" placeholder="Type a message...">
+      <button id="sendbtn">Send</button>
+    </div>
+  </div>
+<!--
+    ============================================================
+    GOOGLE APPS SCRIPT — paste this into Extensions > Apps Script
+    on the Google Sheet you want responses saved to, then deploy
+    it as a Web App (Execute as: Me, Who has access: Anyone).
+    ============================================================
+
+    function doPost(e) {
+      var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+      var data = JSON.parse(e.postData.contents);
+      sheet.appendRow([
+        new Date(),
+        data.name,
+        data.email,
+        data.subject,
+        data.message
+      ]);
+      return ContentService
+        .createTextOutput(JSON.stringify({ result: "success" }))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
+
+    Copy the /exec URL from the deployment and paste it below as
+    SCRIPT_URL.
+    ============================================================
+  -->
+<script>
+    /* ---------- Feedback form → Google Sheet ---------- */
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx3ukgK21kfIv-TlLIlsv4t08SDi0kWxpaCcYFGxw6Klsk0GfQAsQ5Vs4or64FNA9KB/exec";
+
+    const feedbackForm = document.getElementById("feedback-form");
+    const submitBtn = document.getElementById("submit-btn");
+    const formStatus = document.getElementById("form-status");
+
+    feedbackForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      if (SCRIPT_URL.includes("PASTE_YOUR")) {
+        formStatus.className = "form-status error";
+        formStatus.textContent = "Form isn't connected yet — add your Apps Script URL in form.html.";
+        return;
+      }
+
+      const payload = {
+        name: document.getElementById("fname").value.trim(),
+        email: document.getElementById("femail").value.trim(),
+        subject: document.getElementById("fsubject").value.trim(),
+        message: document.getElementById("fmessage").value.trim()
+      };
+
+      if (!payload.name || !payload.email || !payload.subject || !payload.message) {
+        formStatus.className = "form-status error";
+        formStatus.textContent = "Please fill in every field before sending.";
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending...";
+      formStatus.className = "form-status";
+      formStatus.textContent = "";
+
+      // Apps Script web apps don't return readable CORS headers for
+      // cross-origin requests, so we send with mode: "no-cors" and
+      // treat a resolved fetch as success.
+      fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(payload)
+      })
+        .then(() => {
+          formStatus.className = "form-status success";
+          formStatus.textContent = "Thanks! Your feedback has been sent.";
+          feedbackForm.reset();
+        })
+        .catch(() => {
+          formStatus.className = "form-status error";
+          formStatus.textContent = "Something went wrong. Please try again or email us directly.";
+        })
+        .finally(() => {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Send feedback";
+        });
+    });
+
+    /* ---------- Chatbot (shared with other pages) ---------- */
+    const responses = {
+      "hello": "Hi there! How can I assist you today?",
+      "hlo": "Hi there! How can I assist you today?",
+      "hi": "Hi there! How can I assist you today?",
+      "intellect": "Here you will get notes and a lot of information. INTELLECT guides you and helps you with your learning and projects.",
+      "about intellect": "Here you will get notes and a lot of information. INTELLECT guides you and helps you with your learning and projects.",
+      "about developer": "Want to know more about the developer? Visit the <a href='portfolio.html' target='_blank'>Developer Page</a>.",
+      "developer": "Want to know more about the developer? Visit the <a href='portfolio.html' target='_blank'>Developer Page</a>.",
+      "how are you": "I'm just a bot, but I'm here to help you!",
+      "how r u": "I'm just a bot, but I'm here to help you!",
+      "need help": "How can I help you today?",
+      "bye": "Goodbye! Have a great day!",
+      "thank u": "It's my pleasure 😊",
+      "thank you": "It's my pleasure 😊",
+      "drugs": "Want to know more about drugs? Visit our <a href='web.html' target='_blank'>Drug Page</a>.",
+      "drug": "Want to know more about drugs? Visit our <a href='web.html' target='_blank'>Drug Page</a>.",
+      "cyber security": "Want to know more about Cyber Security? Visit our <a href='web2.html' target='_blank'>Cyber Security Page</a>.",
+      "hacking": "Want to know more about hacking? Visit our <a href='web2.html' target='_blank'>Hacking Page</a>.",
+      "ai": "Want to know more about AI? Visit our <a href='aii.html' target='_blank'>AI Page</a>.",
+      "deforestation": "Want to know more about deforestation? Visit our <a href='para.html' target='_blank'>Deforestation Page</a>.",
+      "machine language": "Want to know more about machine language? Visit our <a href='compprogram.html' target='_blank'>Machine Language Page</a>.",
+      "computer programming": "Want to know more about computer programming? Visit our <a href='compprogram.html' target='_blank'>Computer Programming Page</a>.",
+      "computer network": "Want to know more about computer networks? Visit our <a href='networks.html' target='_blank'>Computer Network Page</a>.",
+      "flora and fauna": "Want to know more about flora and fauna? Visit our <a href='flora.html' target='_blank'>Flora and Fauna Page</a>.",
+      "flora": "Want to know more about flora? Visit our <a href='flora.html' target='_blank'>Flora Page</a>.",
+      "fauna": "Want to know more about fauna? Visit our <a href='flora.html' target='_blank'>Fauna Page</a>.",
+      "project tiger": "Want to know more about Project Tiger? Visit our <a href='flora.html' target='_blank'>Project Tiger Page</a>.",
+      "cloud computing": "Want to know more about Cloud Computing? Visit our <a href='cloud.html' target='_blank'>Cloud Computing Page</a>.",
+      "tips for learning": "Visit our learning guide website <a href='attain.html' target='_blank'>Attain</a>.",
+      "tips for improving memory": "Visit our learning guide website <a href='attain.html#memory' target='_blank'>Memory Improvement Page</a>.",
+      "default": "Oops, I'm sorry, I didn't understand that."
+    };
+
+    const chatbot = document.getElementById("chatbot");
+    const chatbox = document.getElementById("chatbox");
+    const chatInput = document.getElementById("userinput");
+
+    document.getElementById("chat-toggle").addEventListener("click", () => {
+      chatbot.style.display = chatbot.style.display === "block" ? "none" : "block";
+      if (chatbot.style.display === "block") chatInput.focus();
+    });
+
+    document.getElementById("close-chat").addEventListener("click", () => chatbot.style.display = "none");
+    document.getElementById("sendbtn").addEventListener("click", sendMessage);
+    chatInput.addEventListener("keydown", e => { if (e.key === "Enter") sendMessage(); });
+
+    function sendMessage() {
+      const value = chatInput.value.trim();
+      if (!value) return;
+      appendMessage("user", value);
+      chatInput.value = "";
+      const response = responses[value.toLowerCase()] || responses.default;
+      setTimeout(() => appendMessage("bot", response), 350);
+    }
+
+    function appendMessage(sender, message) {
+      const el = document.createElement("div");
+      el.className = "message " + sender;
+      el.innerHTML = message;
+      chatbox.appendChild(el);
+      chatbox.scrollTop = chatbox.scrollHeight;
+    }
+  </script>
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">JUNIOR<span>.SPACE</span></a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="mweb.html">Contents</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="form.html" class="active">Support</a></li>
+        </ul>
+      </nav>
+      <button class="contact-btn" onclick="alert('Contact: +91 008 245 2944')">Contact</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <span class="badge">We'd love to hear from you</span>
+        <h1>Send us your <span class="accent">feedback.</span></h1>
+        <p>Found something unclear, spotted an error, or just want to say hi? Fill out the form below — it goes straight to our team.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="form-wrap">
+          <form id="feedback-form" novalidate="">
+            <div class="row-2">
+              <div class="field">
+                <label for="fname">Name</label>
+                <input type="text" id="fname" name="name" placeholder="Your name" required="">
+              </div>
+              <div class="field">
+                <label for="femail">Email</label>
+                <input type="email" id="femail" name="email" placeholder="you@example.com" required="">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="fsubject">Subject</label>
+              <input type="text" id="fsubject" name="subject" placeholder="What's this about?" required="">
+            </div>
+
+            <div class="field">
+              <label for="fmessage">Message</label>
+              <textarea id="fmessage" name="message" placeholder="Tell us more..." required=""></textarea>
+            </div>
+
+            <button class="submit-btn" type="submit" id="submit-btn">Send feedback</button>
+
+            <div class="form-status" id="form-status"></div>
+          </form>
+        </div>
+
+        <div class="alt-contact">
+          <a href="mailto:intellectsupport@gmail.com">junior.support@gmail.com</a>
+          <a href="tel:+910082452944">+91 008 245 2944</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">JUNIOR<span>.SPACE</span></div>
+          <p class="footer-copy">Making quality online education accessible to all.</p>
+        </div>
+        <div>
+          <div class="footer-title">Company</div>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="form.html">Support us</a></li>
+            <li><a href="portfolio.html" target="_blank">Developer</a></li>
+            <li><a href="disclaimer.html" target="_blank">Disclaimer</a></li>
+            <li><a href="index.html#missions">Mission</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-title">Get in touch</div>
+          <ul class="footer-links">
+            <li><a href="mailto:intellectsupport@gmail.com">junior.support@gmail.com</a></li>
+            <li><a href="tel:+910082452944">+91 008 245 2944</a></li>
+            <li><a href="attain.html" target="_blank">Attain</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2023–26, junior.international.com · All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <button id="chat-toggle" aria-label="Open chatbot">✦</button>
+  <div id="chatbot">
+    <div class="chat-header">
+      <span>Chatbot | INTELLECT</span>
+      <button id="close-chat" style="border:0;background:none;color:white;font-size:20px;cursor:pointer;">×</button>
+    </div>
+    <div id="chatbox"></div>
+    <div class="chat-input">
+      <input type="text" id="userinput" placeholder="Type a message...">
+      <button id="sendbtn">Send</button>
+    </div>
+  </div>
+
+  <!--
+    ============================================================
+    GOOGLE APPS SCRIPT — paste this into Extensions > Apps Script
+    on the Google Sheet you want responses saved to, then deploy
+    it as a Web App (Execute as: Me, Who has access: Anyone).
+    ============================================================
+
+    function doPost(e) {
+      var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+      var data = JSON.parse(e.postData.contents);
+      sheet.appendRow([
+        new Date(),
+        data.name,
+        data.email,
+        data.subject,
+        data.message
+      ]);
+      return ContentService
+        .createTextOutput(JSON.stringify({ result: "success" }))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
+
+    Copy the /exec URL from the deployment and paste it below as
+    SCRIPT_URL.
+    ============================================================
+  -->
+
+  <script>
+    /* ---------- Feedback form → Google Sheet ---------- */
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx3ukgK21kfIv-TlLIlsv4t08SDi0kWxpaCcYFGxw6Klsk0GfQAsQ5Vs4or64FNA9KB/exec";
+
+    const feedbackForm = document.getElementById("feedback-form");
+    const submitBtn = document.getElementById("submit-btn");
+    const formStatus = document.getElementById("form-status");
+
+    feedbackForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      if (SCRIPT_URL.includes("PASTE_YOUR")) {
+        formStatus.className = "form-status error";
+        formStatus.textContent = "Form isn't connected yet — add your Apps Script URL in form.html.";
+        return;
+      }
+
+      const payload = {
+        name: document.getElementById("fname").value.trim(),
+        email: document.getElementById("femail").value.trim(),
+        subject: document.getElementById("fsubject").value.trim(),
+        message: document.getElementById("fmessage").value.trim()
+      };
+
+      if (!payload.name || !payload.email || !payload.subject || !payload.message) {
+        formStatus.className = "form-status error";
+        formStatus.textContent = "Please fill in every field before sending.";
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending...";
+      formStatus.className = "form-status";
+      formStatus.textContent = "";
+
+      // Apps Script web apps don't return readable CORS headers for
+      // cross-origin requests, so we send with mode: "no-cors" and
+      // treat a resolved fetch as success.
+      fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(payload)
+      })
+        .then(() => {
+          formStatus.className = "form-status success";
+          formStatus.textContent = "Thanks! Your feedback has been sent.";
+          feedbackForm.reset();
+        })
+        .catch(() => {
+          formStatus.className = "form-status error";
+          formStatus.textContent = "Something went wrong. Please try again or email us directly.";
+        })
+        .finally(() => {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Send feedback";
+        });
+    });
+
+    /* ---------- Chatbot (shared with other pages) ---------- */
+    const responses = {
+      "hello": "Hi there! How can I assist you today?",
+      "hlo": "Hi there! How can I assist you today?",
+      "hi": "Hi there! How can I assist you today?",
+      "intellect": "Here you will get notes and a lot of information. INTELLECT guides you and helps you with your learning and projects.",
+      "about intellect": "Here you will get notes and a lot of information. INTELLECT guides you and helps you with your learning and projects.",
+      "about developer": "Want to know more about the developer? Visit the <a href='portfolio.html' target='_blank'>Developer Page</a>.",
+      "developer": "Want to know more about the developer? Visit the <a href='portfolio.html' target='_blank'>Developer Page</a>.",
+      "how are you": "I'm just a bot, but I'm here to help you!",
+      "how r u": "I'm just a bot, but I'm here to help you!",
+      "need help": "How can I help you today?",
+      "bye": "Goodbye! Have a great day!",
+      "thank u": "It's my pleasure 😊",
+      "thank you": "It's my pleasure 😊",
+      "drugs": "Want to know more about drugs? Visit our <a href='web.html' target='_blank'>Drug Page</a>.",
+      "drug": "Want to know more about drugs? Visit our <a href='web.html' target='_blank'>Drug Page</a>.",
+      "cyber security": "Want to know more about Cyber Security? Visit our <a href='web2.html' target='_blank'>Cyber Security Page</a>.",
+      "hacking": "Want to know more about hacking? Visit our <a href='web2.html' target='_blank'>Hacking Page</a>.",
+      "ai": "Want to know more about AI? Visit our <a href='aii.html' target='_blank'>AI Page</a>.",
+      "deforestation": "Want to know more about deforestation? Visit our <a href='para.html' target='_blank'>Deforestation Page</a>.",
+      "machine language": "Want to know more about machine language? Visit our <a href='compprogram.html' target='_blank'>Machine Language Page</a>.",
+      "computer programming": "Want to know more about computer programming? Visit our <a href='compprogram.html' target='_blank'>Computer Programming Page</a>.",
+      "computer network": "Want to know more about computer networks? Visit our <a href='networks.html' target='_blank'>Computer Network Page</a>.",
+      "flora and fauna": "Want to know more about flora and fauna? Visit our <a href='flora.html' target='_blank'>Flora and Fauna Page</a>.",
+      "flora": "Want to know more about flora? Visit our <a href='flora.html' target='_blank'>Flora Page</a>.",
+      "fauna": "Want to know more about fauna? Visit our <a href='flora.html' target='_blank'>Fauna Page</a>.",
+      "project tiger": "Want to know more about Project Tiger? Visit our <a href='flora.html' target='_blank'>Project Tiger Page</a>.",
+      "cloud computing": "Want to know more about Cloud Computing? Visit our <a href='cloud.html' target='_blank'>Cloud Computing Page</a>.",
+      "tips for learning": "Visit our learning guide website <a href='attain.html' target='_blank'>Attain</a>.",
+      "tips for improving memory": "Visit our learning guide website <a href='attain.html#memory' target='_blank'>Memory Improvement Page</a>.",
+      "default": "Oops, I'm sorry, I didn't understand that."
+    };
+
+    const chatbot = document.getElementById("chatbot");
+    const chatbox = document.getElementById("chatbox");
+    const chatInput = document.getElementById("userinput");
+
+    document.getElementById("chat-toggle").addEventListener("click", () => {
+      chatbot.style.display = chatbot.style.display === "block" ? "none" : "block";
+      if (chatbot.style.display === "block") chatInput.focus();
+    });
+
+    document.getElementById("close-chat").addEventListener("click", () => chatbot.style.display = "none");
+    document.getElementById("sendbtn").addEventListener("click", sendMessage);
+    chatInput.addEventListener("keydown", e => { if (e.key === "Enter") sendMessage(); });
+
+    function sendMessage() {
+      const value = chatInput.value.trim();
+      if (!value) return;
+      appendMessage("user", value);
+      chatInput.value = "";
+      const response = responses[value.toLowerCase()] || responses.default;
+      setTimeout(() => appendMessage("bot", response), 350);
+    }
+
+    function appendMessage(sender, message) {
+      const el = document.createElement("div");
+      el.className = "message " + sender;
+      el.innerHTML = message;
+      chatbox.appendChild(el);
+      chatbox.scrollTop = chatbox.scrollHeight;
+    }
+  </script>
+
+
+</body>
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Send feedback or support JUNIOR.SPACE.">
+  <title>Feedback &amp; Support | JUNIOR.SPACE</title>
+  <link rel="icon" type="image/x-icon" href="olp/logo5.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --surface: #ffffff;
+      --text: #101828;
+      --muted: #667085;
+      --line: #e4e7ec;
+      --primary: #3157d5;
+      --primary-dark: #203da5;
+      --accent: #15a37b;
+      --dark: #0b1220;
+      --shadow: 0 18px 50px rgba(16, 24, 40, .09);
+      --radius: 24px;
+      --danger: #d92d20;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+
+    .container { width: min(1160px, calc(100% - 40px)); margin: auto; }
+
+    /* Navigation */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,.86);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(228,231,236,.8);
+    }
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .brand {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: -.04em;
+    }
+    .brand span { color: var(--primary); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+    }
+    .nav-links a {
+      padding: 10px 14px;
+      color: #475467;
+      font-size: .92rem;
+      font-weight: 600;
+      border-radius: 10px;
+      transition: .2s ease;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--primary); background: #eef2ff; }
+    .contact-btn {
+      border: 0;
+      background: var(--dark);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+    .contact-btn:hover { transform: translateY(-2px); background: var(--primary); }
+
+    /* Page header */
+    .page-header {
+      padding: 64px 0 50px;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(49,87,213,.14), transparent 30%),
+        radial-gradient(circle at 10% 90%, rgba(21,163,123,.10), transparent 28%),
+        var(--surface);
+      border-bottom: 1px solid var(--line);
+      text-align: center;
+    }
+    .badge {
+      display: inline-flex;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: var(--primary);
+      font-size: .78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .page-header h1 {
+      margin: 18px auto 0;
+      max-width: 640px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      letter-spacing: -.05em;
+      line-height: 1.05;
+    }
+    .page-header h1 .accent { color: var(--primary); }
+    .page-header p {
+      margin: 16px auto 0;
+      max-width: 520px;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    /* Form section */
+    .section { padding: 70px 0 90px; }
+    .form-wrap {
+      max-width: 620px;
+      margin: auto;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 40px;
+    }
+    .field { margin-bottom: 20px; }
+    .field label {
+      display: block;
+      font-size: .85rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #344054;
+    }
+    .field input,
+    .field textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: #f9fafb;
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: .95rem;
+      outline: none;
+      transition: .2s ease;
+      color: var(--text);
+    }
+    .field input:focus,
+    .field textarea:focus {
+      border-color: var(--primary);
+      background: white;
+      box-shadow: 0 0 0 3px rgba(49,87,213,.12);
+    }
+    .field textarea { resize: vertical; min-height: 130px; }
+    .row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .submit-btn {
+      width: 100%;
+      border: 0;
+      background: var(--primary);
+      color: white;
+      padding: 14px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: .98rem;
+      cursor: pointer;
+      transition: .2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .submit-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+    .submit-btn:disabled { opacity: .65; cursor: not-allowed; transform: none; }
+
+    .form-status {
+      margin-top: 16px;
+      padding: 12px 14px;
+      border-radius: 10px;
+      font-size: .88rem;
+      font-weight: 600;
+      display: none;
+    }
+    .form-status.success { display: block; background: #ecfdf3; color: #067647; border: 1px solid #abefc6; }
+    .form-status.error { display: block; background: #fef3f2; color: var(--danger); border: 1px solid #fecdca; }
+
+    /* Alt contact */
+    .alt-contact {
+      max-width: 620px;
+      margin: 30px auto 0;
+      display: flex;
+      justify-content: center;
+      gap: 26px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+    .alt-contact a { font-weight: 700; color: var(--primary); }
+
+    /* Footer */
+    footer { background: #070b14; color: white; padding: 55px 0 25px; }
+    .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 50px; }
+    .footer-brand { font-family: "Space Grotesk", sans-serif; font-size: 2rem; font-weight: 800; }
+    .footer-brand span { color: #8ee3c8; }
+    .footer-copy { max-width: 390px; margin-top: 12px; color: #98a2b3; }
+    .footer-title { font-size: .8rem; text-transform: uppercase; letter-spacing: .1em; color: #98a2b3; font-weight: 800; }
+    .footer-links { list-style: none; margin-top: 14px; }
+    .footer-links li + li { margin-top: 9px; }
+    .footer-links a { color: #d0d5dd; }
+    .footer-links a:hover { color: white; }
+    .footer-bottom {
+      margin-top: 45px;
+      padding-top: 20px;
+      border-top: 1px solid #202938;
+      color: #667085;
+      font-size: .8rem;
+      text-align: center;
+    }
+
+    /* Chatbot */
+    #chat-toggle {
+      position: fixed; right: 24px; bottom: 24px; z-index: 200;
+      width: 56px; height: 56px; border: 0; border-radius: 50%;
+      background: var(--primary); color: white; font-size: 1.35rem;
+      cursor: pointer; box-shadow: 0 12px 28px rgba(49,87,213,.35);
+    }
+    #chatbot {
+      position: fixed; right: 24px; bottom: 92px; z-index: 199;
+      width: min(360px, calc(100vw - 32px)); background: white;
+      border: 1px solid var(--line); border-radius: 20px; overflow: hidden;
+      box-shadow: 0 25px 70px rgba(16,24,40,.18); display: none;
+    }
+    .chat-header { padding: 16px 18px; background: var(--dark); color: white; font-weight: 800; display: flex; justify-content: space-between; }
+    #chatbox { height: 250px; overflow-y: auto; padding: 15px; background: #f8fafc; }
+    .message { max-width: 85%; margin-bottom: 10px; padding: 9px 12px; border-radius: 12px; font-size: .88rem; }
+    .user { margin-left: auto; background: var(--primary); color: white; }
+    .bot { background: white; border: 1px solid var(--line); }
+    .chat-input { display: flex; border-top: 1px solid var(--line); }
+    .chat-input input { flex: 1; border: 0; padding: 13px; outline: none; }
+    .chat-input button { border: 0; padding: 0 17px; background: var(--primary); color: white; cursor: pointer; font-weight: 700; }
+
+    @media (max-width: 850px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .container { width: min(100% - 28px, 1160px); }
+      .nav-inner { min-height: 64px; }
+      .nav-links { gap: 0; }
+      .nav-links a { padding: 8px; font-size: .78rem; }
+      .contact-btn { display: none; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .form-wrap { padding: 26px; }
+      .row-2 { grid-template-columns: 1fr; }
+      .page-header { padding: 46px 0 36px; }
+      .section { padding: 46px 0 70px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">JUNIOR<span>.SPACE</span></a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="mweb.html">Contents</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="form.html" class="active">Support</a></li>
+        </ul>
+      </nav>
+      <button class="contact-btn" onclick="alert('Contact: +91 008 245 2944')">Contact</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <span class="badge">We'd love to hear from you</span>
+        <h1>Send us your <span class="accent">feedback.</span></h1>
+        <p>Found something unclear, spotted an error, or just want to say hi? Fill out the form below — it goes straight to our team.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="form-wrap">
+          <form id="feedback-form" novalidate="">
+            <div class="row-2">
+              <div class="field">
+                <label for="fname">Name</label>
+                <input type="text" id="fname" name="name" placeholder="Your name" required="">
+              </div>
+              <div class="field">
+                <label for="femail">Email</label>
+                <input type="email" id="femail" name="email" placeholder="you@example.com" required="">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="fsubject">Subject</label>
+              <input type="text" id="fsubject" name="subject" placeholder="What's this about?" required="">
+            </div>
+
+            <div class="field">
+              <label for="fmessage">Message</label>
+              <textarea id="fmessage" name="message" placeholder="Tell us more..." required=""></textarea>
+            </div>
+
+            <button class="submit-btn" type="submit" id="submit-btn">Send feedback</button>
+
+            <div class="form-status" id="form-status"></div>
+          </form>
+        </div>
+
+        <div class="alt-contact">
+          <a href="mailto:intellectsupport@gmail.com">junior.support@gmail.com</a>
+          <a href="tel:+910082452944">+91 008 245 2944</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">JUNIOR<span>.SPACE</span></div>
+          <p class="footer-copy">Making quality online education accessible to all.</p>
+        </div>
+        <div>
+          <div class="footer-title">Company</div>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="form.html">Support us</a></li>
+            <li><a href="portfolio.html" target="_blank">Developer</a></li>
+            <li><a href="disclaimer.html" target="_blank">Disclaimer</a></li>
+            <li><a href="index.html#missions">Mission</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-title">Get in touch</div>
+          <ul class="footer-links">
+            <li><a href="mailto:intellectsupport@gmail.com">junior.support@gmail.com</a></li>
+            <li><a href="tel:+910082452944">+91 008 245 2944</a></li>
+            <li><a href="attain.html" target="_blank">Attain</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2023–26, junior.international.com · All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <button id="chat-toggle" aria-label="Open chatbot">✦</button>
+  <div id="chatbot">
+    <div class="chat-header">
+      <span>Chatbot | INTELLECT</span>
+      <button id="close-chat" style="border:0;background:none;color:white;font-size:20px;cursor:pointer;">×</button>
+    </div>
+    <div id="chatbox"></div>
+    <div class="chat-input">
+      <input type="text" id="userinput" placeholder="Type a message...">
+      <button id="sendbtn">Send</button>
+    </div>
+  </div>
+
+  <!--
+    ============================================================
+    GOOGLE APPS SCRIPT — paste this into Extensions > Apps Script
+    on the Google Sheet you want responses saved to, then deploy
+    it as a Web App (Execute as: Me, Who has access: Anyone).
+    ============================================================
+
+    function doPost(e) {
+      var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+      var data = JSON.parse(e.postData.contents);
+      sheet.appendRow([
+        new Date(),
+        data.name,
+        data.email,
+        data.subject,
+        data.message
+      ]);
+      return ContentService
+        .createTextOutput(JSON.stringify({ result: "success" }))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
+
+    Copy the /exec URL from the deployment and paste it below as
+    SCRIPT_URL.
+    ============================================================
+  -->
+
+  <script>
+    /* ---------- Feedback form → Google Sheet ---------- */
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx3ukgK21kfIv-TlLIlsv4t08SDi0kWxpaCcYFGxw6Klsk0GfQAsQ5Vs4or64FNA9KB/exec";
+
+    const feedbackForm = document.getElementById("feedback-form");
+    const submitBtn = document.getElementById("submit-btn");
+    const formStatus = document.getElementById("form-status");
+
+    feedbackForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      if (SCRIPT_URL.includes("PASTE_YOUR")) {
+        formStatus.className = "form-status error";
+        formStatus.textContent = "Form isn't connected yet — add your Apps Script URL in form.html.";
+        return;
+      }
+
+      const payload = {
+        name: document.getElementById("fname").value.trim(),
+        email: document.getElementById("femail").value.trim(),
+        subject: document.getElementById("fsubject").value.trim(),
+        message: document.getElementById("fmessage").value.trim()
+      };
+
+      if (!payload.name || !payload.email || !payload.subject || !payload.message) {
+        formStatus.className = "form-status error";
+        formStatus.textContent = "Please fill in every field before sending.";
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending...";
+      formStatus.className = "form-status";
+      formStatus.textContent = "";
+
+      // Apps Script web apps don't return readable CORS headers for
+      // cross-origin requests, so we send with mode: "no-cors" and
+      // treat a resolved fetch as success.
+      fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(payload)
+      })
+        .then(() => {
+          formStatus.className = "form-status success";
+          formStatus.textContent = "Thanks! Your feedback has been sent.";
+          feedbackForm.reset();
+        })
+        .catch(() => {
+          formStatus.className = "form-status error";
+          formStatus.textContent = "Something went wrong. Please try again or email us directly.";
+        })
+        .finally(() => {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Send feedback";
+        });
+    });
+
+    /* ---------- Chatbot (shared with other pages) ---------- */
+    const responses = {
+      "hello": "Hi there! How can I assist you today?",
+      "hlo": "Hi there! How can I assist you today?",
+      "hi": "Hi there! How can I assist you today?",
+      "intellect": "Here you will get notes and a lot of information. INTELLECT guides you and helps you with your learning and projects.",
+      "about intellect": "Here you will get notes and a lot of information. INTELLECT guides you and helps you with your learning and projects.",
+      "about developer": "Want to know more about the developer? Visit the <a href='portfolio.html' target='_blank'>Developer Page</a>.",
+      "developer": "Want to know more about the developer? Visit the <a href='portfolio.html' target='_blank'>Developer Page</a>.",
+      "how are you": "I'm just a bot, but I'm here to help you!",
+      "how r u": "I'm just a bot, but I'm here to help you!",
+      "need help": "How can I help you today?",
+      "bye": "Goodbye! Have a great day!",
+      "thank u": "It's my pleasure 😊",
+      "thank you": "It's my pleasure 😊",
+      "drugs": "Want to know more about drugs? Visit our <a href='web.html' target='_blank'>Drug Page</a>.",
+      "drug": "Want to know more about drugs? Visit our <a href='web.html' target='_blank'>Drug Page</a>.",
+      "cyber security": "Want to know more about Cyber Security? Visit our <a href='web2.html' target='_blank'>Cyber Security Page</a>.",
+      "hacking": "Want to know more about hacking? Visit our <a href='web2.html' target='_blank'>Hacking Page</a>.",
+      "ai": "Want to know more about AI? Visit our <a href='aii.html' target='_blank'>AI Page</a>.",
+      "deforestation": "Want to know more about deforestation? Visit our <a href='para.html' target='_blank'>Deforestation Page</a>.",
+      "machine language": "Want to know more about machine language? Visit our <a href='compprogram.html' target='_blank'>Machine Language Page</a>.",
+      "computer programming": "Want to know more about computer programming? Visit our <a href='compprogram.html' target='_blank'>Computer Programming Page</a>.",
+      "computer network": "Want to know more about computer networks? Visit our <a href='networks.html' target='_blank'>Computer Network Page</a>.",
+      "flora and fauna": "Want to know more about flora and fauna? Visit our <a href='flora.html' target='_blank'>Flora and Fauna Page</a>.",
+      "flora": "Want to know more about flora? Visit our <a href='flora.html' target='_blank'>Flora Page</a>.",
+      "fauna": "Want to know more about fauna? Visit our <a href='flora.html' target='_blank'>Fauna Page</a>.",
+      "project tiger": "Want to know more about Project Tiger? Visit our <a href='flora.html' target='_blank'>Project Tiger Page</a>.",
+      "cloud computing": "Want to know more about Cloud Computing? Visit our <a href='cloud.html' target='_blank'>Cloud Computing Page</a>.",
+      "tips for learning": "Visit our learning guide website <a href='attain.html' target='_blank'>Attain</a>.",
+      "tips for improving memory": "Visit our learning guide website <a href='attain.html#memory' target='_blank'>Memory Improvement Page</a>.",
+      "default": "Oops, I'm sorry, I didn't understand that."
+    };
+
+    const chatbot = document.getElementById("chatbot");
+    const chatbox = document.getElementById("chatbox");
+    const chatInput = document.getElementById("userinput");
+
+    document.getElementById("chat-toggle").addEventListener("click", () => {
+      chatbot.style.display = chatbot.style.display === "block" ? "none" : "block";
+      if (chatbot.style.display === "block") chatInput.focus();
+    });
+
+    document.getElementById("close-chat").addEventListener("click", () => chatbot.style.display = "none");
+    document.getElementById("sendbtn").addEventListener("click", sendMessage);
+    chatInput.addEventListener("keydown", e => { if (e.key === "Enter") sendMessage(); });
+
+    function sendMessage() {
+      const value = chatInput.value.trim();
+      if (!value) return;
+      appendMessage("user", value);
+      chatInput.value = "";
+      const response = responses[value.toLowerCase()] || responses.default;
+      setTimeout(() => appendMessage("bot", response), 350);
+    }
+
+    function appendMessage(sender, message) {
+      const el = document.createElement("div");
+      el.className = "message " + sender;
+      el.innerHTML = message;
+      chatbox.appendChild(el);
+      chatbox.scrollTop = chatbox.scrollHeight;
+    }
+  </script>
+
+
+</body></html>
