@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Animal tissue — types, structure and function, explained simply.">
+  <title>Animal Tissue | JUNIOR.SPACE</title>
+  <link rel="icon" type="image/x-icon" href="olp/logo5.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --surface: #ffffff;
+      --text: #101828;
+      --muted: #667085;
+      --line: #e4e7ec;
+      --primary: #3157d5;
+      --primary-dark: #203da5;
+      --accent: #15a37b;
+      --dark: #0b1220;
+      --shadow: 0 18px 50px rgba(16, 24, 40, .09);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+
+    .container { width: min(1160px, calc(100% - 40px)); margin: auto; }
+
+    /* Navigation */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,.86);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(228,231,236,.8);
+    }
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .brand {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: -.04em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand .back {
+      color: var(--muted);
+      font-size: 1.2rem;
+      line-height: 1;
+      transition: .2s ease;
+    }
+    .brand .back:hover { color: var(--primary); }
+    .brand span { color: var(--primary); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+    }
+    .nav-links a {
+      padding: 10px 14px;
+      color: #475467;
+      font-size: .92rem;
+      font-weight: 600;
+      border-radius: 10px;
+      transition: .2s ease;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--primary); background: #eef2ff; }
+    .contact-btn {
+      border: 0;
+      background: var(--dark);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+    .contact-btn:hover { transform: translateY(-2px); background: var(--primary); }
+
+    /* Page header */
+    .page-header {
+      padding: 60px 0 44px;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(49,87,213,.14), transparent 30%),
+        radial-gradient(circle at 10% 90%, rgba(21,163,123,.10), transparent 28%),
+        var(--surface);
+      border-bottom: 1px solid var(--line);
+    }
+    .badge {
+      display: inline-flex;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: var(--primary);
+      font-size: .78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .page-header h1 {
+      margin-top: 18px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      letter-spacing: -.05em;
+      line-height: 1.05;
+      max-width: 640px;
+    }
+    .page-header h1 .accent { color: var(--primary); }
+    .page-header p.lead {
+      margin-top: 16px;
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    /* Topic chips (table of contents) */
+    .toc {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .toc a {
+      padding: 9px 15px;
+      border-radius: 999px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      font-size: .85rem;
+      font-weight: 700;
+      color: #344054;
+      transition: .2s ease;
+    }
+    .toc a:hover { border-color: var(--primary); color: var(--primary); }
+
+    /* Article layout */
+    .section { padding: 60px 0 90px; }
+    .article-grid {
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      gap: 50px;
+      align-items: start;
+    }
+    .side-nav {
+      position: sticky;
+      top: 96px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .side-nav span {
+      font-size: .7rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      font-weight: 800;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .side-nav a {
+      padding: 8px 10px;
+      border-radius: 8px;
+      font-size: .88rem;
+      font-weight: 600;
+      color: #475467;
+      border-left: 2px solid transparent;
+    }
+    .side-nav a:hover { color: var(--primary); background: #eef2ff; }
+
+    .topic-block {
+      scroll-margin-top: 96px;
+      padding: 34px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 30px rgba(16,24,40,.045);
+      margin-bottom: 24px;
+    }
+    .topic-block .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      font-size: .72rem;
+      font-weight: 800;
+    }
+    .topic-block h2 {
+      margin-top: 8px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.7rem;
+      letter-spacing: -.03em;
+    }
+    .topic-block p { margin-top: 14px; color: #475467; font-size: .98rem; }
+    .topic-block ul { margin-top: 14px; padding-left: 20px; color: #475467; font-size: .98rem; }
+    .topic-block li + li { margin-top: 6px; }
+    .topic-block img {
+      width: 100%;
+      max-width: 480px;
+      display: block;
+      margin-top: 20px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+    }
+
+    /* Footer */
+    footer {
+      background: #070b14;
+      color: white;
+      padding: 55px 0 25px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 50px;
+    }
+    .footer-brand { font-family: "Space Grotesk", sans-serif; font-size: 2rem; font-weight: 800; }
+    .footer-brand span { color: #8ee3c8; }
+    .footer-copy { max-width: 390px; margin-top: 12px; color: #98a2b3; }
+    .footer-title { font-size: .8rem; text-transform: uppercase; letter-spacing: .1em; color: #98a2b3; font-weight: 800; }
+    .footer-links { list-style: none; margin-top: 14px; }
+    .footer-links li + li { margin-top: 9px; }
+    .footer-links a { color: #d0d5dd; }
+    .footer-links a:hover { color: white; }
+    .footer-bottom {
+      margin-top: 45px;
+      padding-top: 20px;
+      border-top: 1px solid #202938;
+      color: #667085;
+      font-size: .8rem;
+      text-align: center;
+    }
+
+    /* Chatbot */
+    #chat-toggle {
+      position: fixed; right: 24px; bottom: 24px; z-index: 200;
+      width: 56px; height: 56px; border: 0; border-radius: 50%;
+      background: var(--primary); color: white; font-size: 1.35rem;
+      cursor: pointer; box-shadow: 0 12px 28px rgba(49,87,213,.35);
+    }
+    #chatbot {
+      position: fixed; right: 24px; bottom: 92px; z-index: 199;
+      width: min(360px, calc(100vw - 32px)); background: white;
+      border: 1px solid var(--line); border-radius: 20px; overflow: hidden;
+      box-shadow: 0 25px 70px rgba(16,24,40,.18); display: none;
+    }
+    .chat-header { padding: 16px 18px; background: var(--dark); color: white; font-weight: 800; display: flex; justify-content: space-between; }
+    #chatbox { height: 250px; overflow-y: auto; padding: 15px; background: #f8fafc; }
+    .message { max-width: 85%; margin-bottom: 10px; padding: 9px 12px; border-radius: 12px; font-size: .88rem; }
+    .user { margin-left: auto; background: var(--primary); color: white; }
+    .bot { background: white; border: 1px solid var(--line); }
+    .chat-input { display: flex; border-top: 1px solid var(--line); }
+    .chat-input input { flex: 1; border: 0; padding: 13px; outline: none; }
+    .chat-input button { border: 0; padding: 0 17px; background: var(--primary); color: white; cursor: pointer; font-weight: 700; }
+
+    @media (max-width: 900px) {
+      .article-grid { grid-template-columns: 1fr; }
+      .side-nav { position: static; flex-direction: row; flex-wrap: wrap; }
+    }
+    @media (max-width: 850px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .container { width: min(100% - 28px, 1160px); }
+      .nav-inner { min-height: 64px; }
+      .nav-links { gap: 0; }
+      .nav-links a { padding: 8px; font-size: .78rem; }
+      .contact-btn { display: none; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .topic-block { padding: 22px; }
+      .page-header { padding: 44px 0 34px; }
+      .section { padding: 40px 0 70px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html"><span class="back">←</span> JUNIOR<span>.SPACE</span></a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="mweb.html" class="active">Contents</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="form.html">Support</a></li>
+        </ul>
+      </nav>
+      <button class="contact-btn" onclick="alert('Contact: +91 008 245 2944')">Contact</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <span class="badge">Biology · Featured topic</span>
+        <h1>Animal <span class="accent">tissue.</span></h1>
+        <p class="lead">A group of cells with similar structure and function, animal tissue comes in four basic types — each with a distinct job in the body.</p>
+
+        <nav class="toc" aria-label="Jump to a topic">
+          <a href="#overview">Overview</a>
+          <a href="#epithelial">Epithelial</a>
+          <a href="#connective">Connective</a>
+          <a href="#muscular">Muscular</a>
+          <a href="#nervous">Nervous</a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container article-grid">
+        <nav class="side-nav" aria-label="Section navigation">
+          <span>On this page</span>
+          <a href="#overview">Overview</a>
+          <a href="#epithelial">Epithelial tissue</a>
+          <a href="#connective">Connective tissue</a>
+          <a href="#muscular">Muscular tissue</a>
+          <a href="#nervous">Nervous tissue</a>
+        </nav>
+
+        <div>
+          <article class="topic-block" id="overview">
+            <span class="eyebrow">Overview</span>
+            <h2>Animal tissue</h2>
+            <p>Animal tissue is a group of animal cells that have similar structures and functions. There are four basic types of animal tissue:</p>
+            <ul>
+              <li>Epithelial tissue</li>
+              <li>Connective tissue</li>
+              <li>Muscular tissue</li>
+              <li>Nervous tissue</li>
+            </ul>
+          </article>
+
+          <article class="topic-block" id="epithelial">
+            <span class="eyebrow">Type 1</span>
+            <h2>Epithelial tissue</h2>
+            <p>Epithelial tissue is the covering or protective tissue of the animal body. It covers most organs and cavities within the body, serving as a protective layer and forming the lining of body surfaces and cavities, as well as the outer layer of skin.</p>
+            <p><strong>Key characteristics:</strong></p>
+            <ul>
+              <li><strong>Cellularity</strong> — made up of tightly packed cells with minimal extracellular material.</li>
+              <li><strong>Polarity</strong> — cells have distinct top (apical) and bottom (basal) surfaces; the apical surface faces the body's exterior or an internal cavity, while the basal surface attaches to underlying connective tissue via the basement membrane.</li>
+              <li><strong>Avascularity</strong> — lacks blood vessels and relies on diffusion from underlying connective tissue for nutrients and waste removal.</li>
+              <li><strong>Regeneration</strong> — has a high capacity to regenerate, important for tissues under constant wear, like skin and intestinal linings.</li>
+            </ul>
+            <img src="tissuee.png" alt="Animal tissue diagram">
+          </article>
+
+          <article class="topic-block" id="connective">
+            <span class="eyebrow">Type 2</span>
+            <h2>Connective tissue</h2>
+            <p>Connective tissue is one of the four fundamental tissue types in the body, playing a crucial role in supporting, connecting, and separating other tissues and organs. It's set apart by its abundant extracellular matrix, unlike epithelial, muscle, or nervous tissue.</p>
+            <p><strong>Key features:</strong></p>
+            <ul>
+              <li><strong>Extracellular matrix</strong> — fewer cells, and a large amount of matrix made of fibers (collagen, elastin, reticular fibers) and ground substance (a gel-like mix of water, proteins, and glycosaminoglycans).</li>
+              <li><strong>Vascularity</strong> — varies by type: bone is highly vascular, while cartilage has no blood vessels at all.</li>
+              <li><strong>Diverse cell types</strong> — includes fibroblasts (which produce fibers), adipocytes (fat cells), chondrocytes (cartilage cells), osteocytes (bone cells), and blood cells.</li>
+            </ul>
+          </article>
+
+          <article class="topic-block" id="muscular">
+            <span class="eyebrow">Type 3</span>
+            <h2>Muscular tissue</h2>
+            <p>Muscular tissue is responsible for producing movement by contracting and relaxing. It's made of muscle fibers and comes in three types — skeletal, smooth, and cardiac — each playing a distinct role, from voluntary movement to internal organ control and heart function.</p>
+          </article>
+
+          <article class="topic-block" id="nervous">
+            <span class="eyebrow">Type 4</span>
+            <h2>Nervous tissue</h2>
+            <p>Nervous tissue makes up the central and peripheral nervous systems, enabling communication between different parts of the body. It consists of neurons, which transmit electrical signals, and glial cells, which support, protect, and nourish the neurons. Nervous tissue is essential for coordinating body functions, processing information, and responding to stimuli.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">JUNIOR<span>.SPACE</span></div>
+          <p class="footer-copy">Making quality online education accessible to all.</p>
+        </div>
+        <div>
+          <div class="footer-title">Company</div>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="form.html">Support us</a></li>
+            <li><a href="portfolio.html" target="_blank">Developer</a></li>
+            <li><a href="disclaimer.html" target="_blank">Disclaimer</a></li>
+            <li><a href="index.html#missions">Mission</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-title">Get in touch</div>
+          <ul class="footer-links">
+            <li><a href="mailto:intellectsupport@gmail.com">junior.support@gmail.com</a></li>
+            <li><a href="tel:+910082452944">+91 008 245 2944</a></li>
+            <li><a href="attain.html" target="_blank">Attain</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2023–26, junior.international.com · All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <button id="chat-toggle" aria-label="Open chatbot">✦</button>
+  <div id="chatbot">
+    <div class="chat-header">
+      <span>Chatbot | INTELLECT</span>
+      <button id="close-chat" style="border:0;background:none;color:white;font-size:20px;cursor:pointer;">&times;</button>
+    </div>
+    <div id="chatbox"></div>
+    <div class="chat-input">
+      <input type="text" id="userinput" placeholder="Type a message...">
+      <button id="sendbtn">Send</button>
+    </div>
+  </div>
+
+  <script>
+    const responses = {
+      "hello": "Hi there! How can I assist you today?",
+      "hlo": "Hi there! How can I assist you today?",
+      "hi": "Hi there! How can I assist you today?",
+      "intellect": "Here you will get notes and a lot of information. INTELLECT guides you and helps you with your learning and projects.",
+      "about intellect": "Here you will get notes and a lot of information. INTELLECT guides you and helps you with your learning and projects.",
+      "about developer": "Want to know more about the developer? Visit the <a href='portfolio.html' target='_blank'>Developer Page</a>.",
+      "developer": "Want to know more about the developer? Visit the <a href='portfolio.html' target='_blank'>Developer Page</a>.",
+      "how are you": "I'm just a bot, but I'm here to help you!",
+      "how r u": "I'm just a bot, but I'm here to help you!",
+      "need help": "How can I help you today?",
+      "bye": "Goodbye! Have a great day!",
+      "thank u": "It's my pleasure 😊",
+      "thank you": "It's my pleasure 😊",
+      "drugs": "Want to know more about drugs? Visit our <a href='web.html' target='_blank'>Drug Page</a>.",
+      "drug": "Want to know more about drugs? Visit our <a href='web.html' target='_blank'>Drug Page</a>.",
+      "cyber security": "Want to know more about Cyber Security? Visit our <a href='web2.html' target='_blank'>Cyber Security Page</a>.",
+      "hacking": "Want to know more about hacking? Visit our <a href='web2.html' target='_blank'>Hacking Page</a>.",
+      "ai": "Want to know more about AI? Visit our <a href='aii.html' target='_blank'>AI Page</a>.",
+      "deforestation": "Want to know more about deforestation? Visit our <a href='para.html' target='_blank'>Deforestation Page</a>.",
+      "machine language": "Want to know more about machine language? Visit our <a href='compprogram.html' target='_blank'>Machine Language Page</a>.",
+      "computer programming": "Want to know more about computer programming? Visit our <a href='compprogram.html' target='_blank'>Computer Programming Page</a>.",
+      "computer network": "Want to know more about computer networks? Visit our <a href='networks.html' target='_blank'>Computer Network Page</a>.",
+      "flora and fauna": "Want to know more about flora and fauna? Visit our <a href='flora.html' target='_blank'>Flora and Fauna Page</a>.",
+      "flora": "Want to know more about flora? Visit our <a href='flora.html' target='_blank'>Flora Page</a>.",
+      "fauna": "Want to know more about fauna? Visit our <a href='flora.html' target='_blank'>Fauna Page</a>.",
+      "project tiger": "Want to know more about Project Tiger? Visit our <a href='flora.html' target='_blank'>Project Tiger Page</a>.",
+      "cloud computing": "Want to know more about Cloud Computing? Visit our <a href='cloud.html' target='_blank'>Cloud Computing Page</a>.",
+      "tips for learning": "Visit our learning guide website <a href='attain.html' target='_blank'>Attain</a>.",
+      "tips for improving memory": "Visit our learning guide website <a href='attain.html#memory' target='_blank'>Memory Improvement Page</a>.",
+      "default": "Oops, I'm sorry, I didn't understand that."
+    };
+
+    const chatbot = document.getElementById("chatbot");
+    const chatbox = document.getElementById("chatbox");
+    const input = document.getElementById("userinput");
+
+    document.getElementById("chat-toggle").addEventListener("click", () => {
+      chatbot.style.display = chatbot.style.display === "block" ? "none" : "block";
+      if (chatbot.style.display === "block") input.focus();
+    });
+
+    document.getElementById("close-chat").addEventListener("click", () => chatbot.style.display = "none");
+    document.getElementById("sendbtn").addEventListener("click", sendMessage);
+    input.addEventListener("keydown", e => { if (e.key === "Enter") sendMessage(); });
+
+    function sendMessage() {
+      const value = input.value.trim();
+      if (!value) return;
+      appendMessage("user", value);
+      input.value = "";
+      const response = responses[value.toLowerCase()] || responses.default;
+      setTimeout(() => appendMessage("bot", response), 350);
+    }
+
+    function appendMessage(sender, message) {
+      const el = document.createElement("div");
+      el.className = "message " + sender;
+      el.innerHTML = message;
+      chatbox.appendChild(el);
+      chatbox.scrollTop = chatbox.scrollHeight;
+    }
+  </script>
+</body>
+</html>

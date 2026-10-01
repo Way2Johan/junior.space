@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Drug addiction — what it is and how it affects the brain and behavior.">
+  <title>Drug Addiction | JUNIOR.SPACE</title>
+  <link rel="icon" type="image/x-icon" href="../olp/logo5.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#f6f8fb; --surface:#fff; --text:#101828; --muted:#667085; --line:#e4e7ec; --primary:#3157d5; --primary-dark:#203da5; --accent:#15a37b; --dark:#0b1220; --shadow:0 18px 50px rgba(16,24,40,.09); --radius:24px; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:Inter,system-ui,sans-serif; background:var(--bg); color:var(--text); line-height:1.65; }
+    a { color:inherit; text-decoration:none; }
+    button { font:inherit; }
+    .container { width:min(1160px, calc(100% - 40px)); margin:auto; }
+    .navbar { position:sticky; top:0; z-index:100; background:rgba(255,255,255,.86); backdrop-filter:blur(16px); border-bottom:1px solid rgba(228,231,236,.8); }
+    .nav-inner { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:28px; }
+    .brand { font-family:"Space Grotesk",sans-serif; font-size:1.45rem; font-weight:700; letter-spacing:-.04em; display:flex; align-items:center; gap:10px; }
+    .brand .back { color:var(--muted); font-size:1.2rem; transition:.2s ease; }
+    .brand .back:hover { color:var(--primary); }
+    .brand span { color:var(--primary); }
+    .nav-links { display:flex; align-items:center; gap:8px; list-style:none; }
+    .nav-links a { padding:10px 14px; color:#475467; font-size:.92rem; font-weight:600; border-radius:10px; transition:.2s ease; }
+    .nav-links a:hover, .nav-links a.active { color:var(--primary); background:#eef2ff; }
+    .contact-btn { border:0; background:var(--dark); color:#fff; padding:10px 15px; border-radius:999px; cursor:pointer; font-weight:700; transition:.2s ease; }
+    .contact-btn:hover { transform:translateY(-2px); background:var(--primary); }
+    .page-header { padding:60px 0 44px; background:radial-gradient(circle at 85% 20%, rgba(49,87,213,.14), transparent 30%), radial-gradient(circle at 10% 90%, rgba(21,163,123,.10), transparent 28%), var(--surface); border-bottom:1px solid var(--line); }
+    .badge { display:inline-flex; padding:7px 12px; border-radius:999px; background:#eef2ff; color:var(--primary); font-size:.78rem; font-weight:800; text-transform:uppercase; letter-spacing:.08em; }
+    .page-header h1 { margin-top:18px; font-family:"Space Grotesk",sans-serif; font-size:clamp(2rem,5vw,3.1rem); letter-spacing:-.05em; line-height:1.1; max-width:680px; }
+    .page-header h1 .accent { color:var(--primary); }
+    .page-header p.lead { margin-top:16px; max-width:620px; color:var(--muted); font-size:1.02rem; }
+    .section { padding:60px 0 90px; }
+    .topic-block { padding:34px; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); box-shadow:0 8px 30px rgba(16,24,40,.045); overflow:hidden; }
+    .topic-block p { color:#475467; font-size:.98rem; }
+    .topic-block img { float:right; width:260px; height:auto; margin:4px 0 14px 20px; border-radius:16px; border:1px solid var(--line); }
+    .full-img { width:100%; margin-top:22px; border-radius:16px; border:1px solid var(--line); display:block; }
+    @media (max-width:900px) { .article-grid { grid-template-columns:1fr; } }
+    footer { background:#070b14; color:#fff; padding:55px 0 25px; }
+    .footer-grid { display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:50px; }
+    .footer-brand { font-family:"Space Grotesk",sans-serif; font-size:2rem; font-weight:800; }
+    .footer-brand span { color:#8ee3c8; }
+    .footer-copy { max-width:390px; margin-top:12px; color:#98a2b3; }
+    .footer-title { font-size:.8rem; text-transform:uppercase; letter-spacing:.1em; color:#98a2b3; font-weight:800; }
+    .footer-links { list-style:none; margin-top:14px; }
+    .footer-links li + li { margin-top:9px; }
+    .footer-links a { color:#d0d5dd; }
+    .footer-links a:hover { color:#fff; }
+    .footer-bottom { margin-top:45px; padding-top:20px; border-top:1px solid #202938; color:#667085; font-size:.8rem; text-align:center; }
+    #chat-toggle { position:fixed; right:24px; bottom:24px; z-index:200; width:56px; height:56px; border:0; border-radius:50%; background:var(--primary); color:#fff; font-size:1.35rem; cursor:pointer; box-shadow:0 12px 28px rgba(49,87,213,.35); }
+    #chatbot { position:fixed; right:24px; bottom:92px; z-index:199; width:min(360px, calc(100vw - 32px)); background:#fff; border:1px solid var(--line); border-radius:20px; overflow:hidden; box-shadow:0 25px 70px rgba(16,24,40,.18); display:none; }
+    .chat-header { padding:16px 18px; background:var(--dark); color:#fff; font-weight:800; display:flex; justify-content:space-between; }
+    #chatbox { height:250px; overflow-y:auto; padding:15px; background:#f8fafc; }
+    .message { max-width:85%; margin-bottom:10px; padding:9px 12px; border-radius:12px; font-size:.88rem; }
+    .user { margin-left:auto; background:var(--primary); color:#fff; }
+    .bot { background:#fff; border:1px solid var(--line); }
+    .chat-input { display:flex; border-top:1px solid var(--line); }
+    .chat-input input { flex:1; border:0; padding:13px; outline:none; }
+    .chat-input button { border:0; padding:0 17px; background:var(--primary); color:#fff; cursor:pointer; font-weight:700; }
+    @media (max-width:850px) { .footer-grid { grid-template-columns:1fr 1fr; } }
+    @media (max-width:600px) {
+      .container { width:min(100% - 28px, 1160px); }
+      .nav-inner { min-height:64px; } .nav-links { gap:0; } .nav-links a { padding:8px; font-size:.78rem; }
+      .contact-btn { display:none; } .footer-grid { grid-template-columns:1fr; }
+      .topic-block { padding:22px; } .topic-block img { float:none; width:100%; margin:14px 0 0; }
+      .page-header { padding:44px 0 34px; } .section { padding:40px 0 70px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a class="brand" href="../web.html"><span class="back">←</span> JUNIOR<span>.SPACE</span></a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../mweb.html">Contents</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../form.html">Support</a></li>
+        </ul>
+      </nav>
+      <button class="contact-btn" onclick="alert('Contact: +91 008 245 2944')">Contact</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <span class="badge">Health &amp; Awareness</span>
+        <h1>What is drug <span class="accent">addiction?</span></h1>
+        <p class="lead">Addiction is not having control over doing, taking, or using something to the point where it becomes harmful.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <article class="topic-block">
+          <img src="hi/addiction2.jpeg" alt="Drug addiction">
+          <p>Drug addiction, also called substance use disorder, is a disease that affects a person's brain and behavior and leads to an inability to control the use of a legal or illegal drug or medicine. Substances such as alcohol, marijuana, and nicotine are also considered drugs. When you're addicted, you may continue using the drug despite the harm it causes.</p>
+          <p style="margin-top:16px">Drug addiction can start with experimental use of a recreational drug in social situations, and for some people, use becomes more frequent. For others — particularly with opioids — addiction begins when they take prescribed medicines or receive them from others who have prescriptions.</p>
+          <p style="margin-top:16px">The risk of addiction and how fast it develops varies by drug. Some, like opioid painkillers, have a higher risk and cause addiction more quickly than others. Over time, you may need larger doses to get the same effect, and eventually need the drug just to feel normal. Attempts to stop can cause intense cravings and make you feel physically ill — these are withdrawal symptoms.</p>
+          <p style="margin-top:16px">Help from a healthcare provider, family, friends, support groups, or an organized treatment program can help overcome drug addiction and stay drug-free.</p>
+          <img class="full-img" src="hi/addiction.jpeg" alt="Drug addiction awareness">
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">JUNIOR<span>.SPACE</span></div>
+          <p class="footer-copy">Making quality online education accessible to all.</p>
+        </div>
+        <div>
+          <div class="footer-title">Company</div>
+          <ul class="footer-links">
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../form.html">Support us</a></li>
+            <li><a href="../portfolio.html" target="_blank">Developer</a></li>
+            <li><a href="../disclaimer.html" target="_blank">Disclaimer</a></li>
+            <li><a href="../index.html#missions">Mission</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-title">Get in touch</div>
+          <ul class="footer-links">
+            <li><a href="mailto:intellectsupport@gmail.com">junior.support@gmail.com</a></li>
+            <li><a href="tel:+910082452944">+91 008 245 2944</a></li>
+            <li><a href="../attain.html" target="_blank">Attain</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2023–26, junior.international.com · All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <button id="chat-toggle" aria-label="Open chatbot">✦</button>
+  <div id="chatbot">
+    <div class="chat-header"><span>Chatbot | INTELLECT</span><button id="close-chat" style="border:0;background:none;color:white;font-size:20px;cursor:pointer;">&times;</button></div>
+    <div id="chatbox"></div>
+    <div class="chat-input"><input type="text" id="userinput" placeholder="Type a message..."><button id="sendbtn">Send</button></div>
+  </div>
+
+  <script>
+    const responses = {
+      "hello":"Hi there! How can I assist you today?","hi":"Hi there! How can I assist you today?",
+      "drugs":"Want to know more about drugs? Visit our <a href='../web.html' target='_blank'>Drug Page</a>.",
+      "drug":"Want to know more about drugs? Visit our <a href='../web.html' target='_blank'>Drug Page</a>.",
+      "default":"Oops, I'm sorry, I didn't understand that."
+    };
+    const chatbot=document.getElementById("chatbot"),chatbox=document.getElementById("chatbox"),input=document.getElementById("userinput");
+    document.getElementById("chat-toggle").addEventListener("click",()=>{chatbot.style.display=chatbot.style.display==="block"?"none":"block";if(chatbot.style.display==="block")input.focus();});
+    document.getElementById("close-chat").addEventListener("click",()=>chatbot.style.display="none");
+    document.getElementById("sendbtn").addEventListener("click",sendMessage);
+    input.addEventListener("keydown",e=>{if(e.key==="Enter")sendMessage();});
+    function sendMessage(){const v=input.value.trim();if(!v)return;appendMessage("user",v);input.value="";const r=responses[v.toLowerCase()]||responses.default;setTimeout(()=>appendMessage("bot",r),350);}
+    function appendMessage(s,m){const el=document.createElement("div");el.className="message "+s;el.innerHTML=m;chatbox.appendChild(el);chatbox.scrollTop=chatbox.scrollHeight;}
+  </script>
+</body>
+</html>

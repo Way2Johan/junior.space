@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A simple sticky-note board. Notes are saved in your browser.">
+  <title>Sticky notes | ATTAIN</title>
+  <link rel="icon" type="image/x-icon" href="olp/logo5.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1d2b26;
+      --muted: #5d7269;
+      --board: #cdeee8;
+      --accent: #0f7a63;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      padding: 40px 20px 80px;
+      font-family: Inter, system-ui, sans-serif;
+      background: var(--board);
+      color: var(--ink);
+      line-height: 1.5;
+    }
+
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+    .wrap { width: min(1100px, 100%); margin: auto; }
+
+    header.board-head { text-align: center; margin-bottom: 8px; }
+    .back {
+      display: inline-block;
+      margin-bottom: 26px;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: .9rem;
+      text-decoration: none;
+    }
+    .back:hover { color: var(--accent); }
+
+    h1 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(2.2rem, 6vw, 3.4rem);
+      letter-spacing: -.045em;
+    }
+    .sub { margin-top: 8px; color: var(--muted); }
+
+    .toolbar {
+      margin: 30px 0 34px;
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn {
+      padding: 12px 18px;
+      border: 0;
+      border-radius: 12px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .18s ease;
+    }
+    .btn-add { background: var(--accent); color: #fff; }
+    .btn-add:hover { background: #0b6150; transform: translateY(-2px); }
+    .btn-clear { background: rgba(255, 255, 255, .7); color: #7a3030; }
+    .btn-clear:hover { background: #fff; }
+
+    .notes {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 26px;
+      list-style: none;
+    }
+
+    .note {
+      position: relative;
+      min-height: 210px;
+      padding: 20px 18px;
+      background: #ffc;
+      border-radius: 2px;
+      box-shadow: 5px 6px 12px rgba(20, 30, 26, .22);
+      transform: rotate(-1.6deg);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .note:nth-child(even) { background: #cfc; transform: rotate(1.4deg); }
+    .note:nth-child(3n) { background: #ccf; transform: rotate(-.8deg); }
+    .note:nth-child(5n) { background: #fcd9e5; transform: rotate(2deg); }
+    .note:focus-within { transform: rotate(0) scale(1.03); box-shadow: 8px 10px 20px rgba(20, 30, 26, .3); z-index: 2; }
+
+    .note h2,
+    .note p {
+      outline: none;
+      word-break: break-word;
+    }
+    .note h2 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      padding-right: 22px;
+    }
+    .note p { margin-top: 10px; font-size: .95rem; color: #38473f; }
+    .note h2:empty::before,
+    .note p:empty::before {
+      content: attr(data-placeholder);
+      color: rgba(40, 60, 50, .4);
+    }
+
+    .note-delete {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 24px;
+      height: 24px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, .07);
+      color: #3a4a42;
+      font-size: 15px;
+      line-height: 1;
+      cursor: pointer;
+      opacity: 0;
+      transition: .18s ease;
+    }
+    .note:hover .note-delete,
+    .note:focus-within .note-delete { opacity: 1; }
+    .note-delete:hover { background: #d9534f; color: #fff; }
+
+    .saved {
+      position: fixed;
+      left: 50%;
+      bottom: 24px;
+      transform: translate(-50%, 20px);
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: #fff;
+      font-size: .85rem;
+      font-weight: 600;
+      opacity: 0;
+      pointer-events: none;
+      transition: .25s ease;
+    }
+    .saved.show { opacity: 1; transform: translate(-50%, 0); }
+
+    .empty { text-align: center; color: var(--muted); padding: 50px 0; }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition-duration: .01ms !important; }
+      .note { transform: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header class="board-head">
+      <a class="back" href="attain.html">← Back to ATTAIN</a>
+      <h1>Sticky notes</h1>
+      <p class="sub">Click any note to edit it. Everything saves automatically in this browser.</p>
+    </header>
+
+    <div class="toolbar">
+      <button class="btn btn-add" type="button" id="add">+ Add a note</button>
+      <button class="btn btn-clear" type="button" id="clear">Clear all</button>
+    </div>
+
+    <ul class="notes" id="board"></ul>
+    <p class="empty" id="empty" hidden>No notes yet. Add one to get started.</p>
+  </div>
+
+  <div class="saved" id="toast">Saved</div>
+
+  <script>
+    (function () {
+      "use strict";
+
+      var KEY = "attain.stickynotes.v1";
+      var board = document.getElementById("board");
+      var empty = document.getElementById("empty");
+      var toast = document.getElementById("toast");
+      var notes = load();
+      var toastTimer;
+
+      function load() {
+        try {
+          var raw = window.localStorage.getItem(KEY);
+          if (raw) return JSON.parse(raw);
+        } catch (e) {
+          // Storage unavailable or corrupt — fall through to the starter set.
+        }
+        return [
+          { title: "Today", body: "Write down what actually needs doing." },
+          { title: "This week", body: "Two or three things, no more." },
+          { title: "Ideas", body: "Anything you don't want to forget." }
+        ];
+      }
+
+      function save() {
+        try {
+          window.localStorage.setItem(KEY, JSON.stringify(notes));
+          flash("Saved");
+        } catch (e) {
+          flash("Couldn't save — storage is unavailable");
+        }
+      }
+
+      function flash(message) {
+        toast.textContent = message;
+        toast.classList.add("show");
+        window.clearTimeout(toastTimer);
+        toastTimer = window.setTimeout(function () {
+          toast.classList.remove("show");
+        }, 1400);
+      }
+
+      function render() {
+        board.innerHTML = "";
+
+        notes.forEach(function (note, index) {
+          var li = document.createElement("li");
+          li.className = "note";
+          li.innerHTML =
+            '<button class="note-delete" type="button" aria-label="Delete note">&times;</button>' +
+            '<h2 contenteditable="true" data-placeholder="Title"></h2>' +
+            '<p contenteditable="true" data-placeholder="What needs doing?"></p>';
+
+          var title = li.querySelector("h2");
+          var body = li.querySelector("p");
+          title.textContent = note.title;
+          body.textContent = note.body;
+
+          title.addEventListener("input", function () {
+            notes[index].title = title.textContent;
+            queueSave();
+          });
+          body.addEventListener("input", function () {
+            notes[index].body = body.textContent;
+            queueSave();
+          });
+
+          li.querySelector(".note-delete").addEventListener("click", function () {
+            notes.splice(index, 1);
+            save();
+            render();
+          });
+
+          board.appendChild(li);
+        });
+
+        empty.hidden = notes.length > 0;
+      }
+
+      var saveTimer;
+      function queueSave() {
+        window.clearTimeout(saveTimer);
+        saveTimer = window.setTimeout(save, 600);
+      }
+
+      document.getElementById("add").addEventListener("click", function () {
+        notes.push({ title: "", body: "" });
+        save();
+        render();
+        var last = board.lastElementChild;
+        if (last) last.querySelector("h2").focus();
+      });
+
+      document.getElementById("clear").addEventListener("click", function () {
+        if (!notes.length) return;
+        if (!window.confirm("Delete every note? This cannot be undone.")) return;
+        notes = [];
+        save();
+        render();
+      });
+
+      render();
+    })();
+  </script>
+</body>
+
+</html>
