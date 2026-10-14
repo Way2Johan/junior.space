@@ -1,246 +1,487 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta name="description" content="Send feedback or support JUNIOR.SPACE.">
+
   <title>Feedback &amp; Support | JUNIOR.SPACE</title>
+
   <link rel="icon" type="image/x-icon" href="olp/logo5.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
+
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
   <style>
+
     :root { --bg:#f6f8fb; --surface:#fff; --text:#101828; --muted:#667085; --line:#e4e7ec; --primary:#3157d5; --primary-dark:#203da5; --accent:#15a37b; --dark:#0b1220; --shadow:0 18px 50px rgba(16,24,40,.09); --radius:24px; --danger:#d92d20; }
+
     * { box-sizing:border-box; margin:0; padding:0; }
+
     body { font-family:Inter,system-ui,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+
     a { color:inherit; text-decoration:none; }
+
     button, input, textarea { font:inherit; }
+
     .container { width:min(1160px, calc(100% - 40px)); margin:auto; }
+
     .navbar { position:sticky; top:0; z-index:100; background:rgba(255,255,255,.86); backdrop-filter:blur(16px); border-bottom:1px solid rgba(228,231,236,.8); }
+
     .nav-inner { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:28px; }
+
     .brand { font-family:"Space Grotesk",sans-serif; font-size:1.45rem; font-weight:700; letter-spacing:-.04em; }
+
     .brand span { color:var(--primary); }
+
     .nav-links { display:flex; align-items:center; gap:8px; list-style:none; }
+
     .nav-links a { padding:10px 14px; color:#475467; font-size:.92rem; font-weight:600; border-radius:10px; transition:.2s ease; }
+
     .nav-links a:hover, .nav-links a.active { color:var(--primary); background:#eef2ff; }
+
     .contact-btn { border:0; background:var(--dark); color:#fff; padding:10px 15px; border-radius:999px; cursor:pointer; font-weight:700; transition:.2s ease; }
+
     .contact-btn:hover { transform:translateY(-2px); background:var(--primary); }
+
     .page-header { padding:64px 0 50px; background:radial-gradient(circle at 85% 20%, rgba(49,87,213,.14), transparent 30%), radial-gradient(circle at 10% 90%, rgba(21,163,123,.10), transparent 28%), var(--surface); border-bottom:1px solid var(--line); text-align:center; }
+
     .badge { display:inline-flex; padding:7px 12px; border-radius:999px; background:#eef2ff; color:var(--primary); font-size:.78rem; font-weight:800; text-transform:uppercase; letter-spacing:.08em; }
+
     .page-header h1 { margin:18px auto 0; max-width:640px; font-family:"Space Grotesk",sans-serif; font-size:clamp(2.2rem,5vw,3.2rem); letter-spacing:-.05em; line-height:1.05; }
+
     .page-header h1 .accent { color:var(--primary); }
+
     .page-header p { margin:16px auto 0; max-width:520px; color:var(--muted); font-size:1.02rem; }
+
     .section { padding:70px 0 90px; }
+
     .form-wrap { max-width:620px; margin:auto; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:40px; }
+
     .field { margin-bottom:20px; }
+
     .field label { display:block; font-size:.85rem; font-weight:700; margin-bottom:8px; color:#344054; }
+
     .field input, .field textarea {
+
       width:100%; border:1px solid var(--line); background:#f9fafb; border-radius:12px; padding:12px 14px;
+
       font-size:.95rem; outline:none; transition:.2s ease; color:var(--text);
+
     }
+
     .field input:focus, .field textarea:focus { border-color:var(--primary); background:#fff; box-shadow:0 0 0 3px rgba(49,87,213,.12); }
+
     .field textarea { resize:vertical; min-height:120px; }
+
     .row-2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+
     .rating-group { display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
+
     .rating-group input[type=radio] { display:none; }
+
     .rating-group label {
+
       padding:10px 16px; border-radius:999px; border:1px solid var(--line); background:#f9fafb;
+
       font-size:.88rem; font-weight:700; color:#475467; cursor:pointer; transition:.2s ease;
+
     }
+
     .rating-group input[type=radio]:checked + label { background:var(--primary); border-color:var(--primary); color:#fff; }
+
     .submit-btn {
+
       width:100%; border:0; background:var(--primary); color:#fff; padding:14px 18px; border-radius:12px;
+
       font-weight:700; font-size:.98rem; cursor:pointer; transition:.2s ease;
+
     }
+
     .submit-btn:hover { background:var(--primary-dark); transform:translateY(-2px); }
+
     .submit-btn:disabled { opacity:.65; cursor:not-allowed; transform:none; }
+
     .form-status { margin-top:16px; padding:12px 14px; border-radius:10px; font-size:.88rem; font-weight:600; display:none; }
+
     .form-status.success { display:block; background:#ecfdf3; color:#067647; border:1px solid #abefc6; }
+
     .form-status.error { display:block; background:#fef3f2; color:var(--danger); border:1px solid #fecdca; }
+
     .alt-contact { max-width:620px; margin:30px auto 0; display:flex; justify-content:center; gap:26px; flex-wrap:wrap; color:var(--muted); font-size:.88rem; }
+
     .alt-contact a { font-weight:700; color:var(--primary); }
+
     footer { background:#070b14; color:#fff; padding:55px 0 25px; }
+
     .footer-grid { display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:50px; }
+
     .footer-brand { font-family:"Space Grotesk",sans-serif; font-size:2rem; font-weight:800; }
+
     .footer-brand span { color:#8ee3c8; }
+
     .footer-copy { max-width:390px; margin-top:12px; color:#98a2b3; }
+
     .footer-title { font-size:.8rem; text-transform:uppercase; letter-spacing:.1em; color:#98a2b3; font-weight:800; }
+
     .footer-links { list-style:none; margin-top:14px; }
+
     .footer-links li + li { margin-top:9px; }
+
     .footer-links a { color:#d0d5dd; }
+
     .footer-links a:hover { color:#fff; }
+
     .footer-bottom { margin-top:45px; padding-top:20px; border-top:1px solid #202938; color:#667085; font-size:.8rem; text-align:center; }
-    #chat-toggle { position:fixed; right:24px; bottom:24px; z-index:200; width:56px; height:56px; border:0; border-radius:50%; background:var(--primary); color:#fff; font-size:1.35rem; cursor:pointer; box-shadow:0 12px 28px rgba(49,87,213,.35); }
-    #chatbot { position:fixed; right:24px; bottom:92px; z-index:199; width:min(360px, calc(100vw - 32px)); background:#fff; border:1px solid var(--line); border-radius:20px; overflow:hidden; box-shadow:0 25px 70px rgba(16,24,40,.18); display:none; }
+
+    \#chat-toggle { position:fixed; right:24px; bottom:24px; z-index:200; width:56px; height:56px; border:0; border-radius:50%; background:var(--primary); color:#fff; font-size:1.35rem; cursor:pointer; box-shadow:0 12px 28px rgba(49,87,213,.35); }
+
+    \#chatbot { position:fixed; right:24px; bottom:92px; z-index:199; width:min(360px, calc(100vw - 32px)); background:#fff; border:1px solid var(--line); border-radius:20px; overflow:hidden; box-shadow:0 25px 70px rgba(16,24,40,.18); display:none; }
+
     .chat-header { padding:16px 18px; background:var(--dark); color:#fff; font-weight:800; display:flex; justify-content:space-between; }
-    #chatbox { height:250px; overflow-y:auto; padding:15px; background:#f8fafc; }
+
+    \#chatbox { height:250px; overflow-y:auto; padding:15px; background:#f8fafc; }
+
     .message { max-width:85%; margin-bottom:10px; padding:9px 12px; border-radius:12px; font-size:.88rem; }
+
     .user { margin-left:auto; background:var(--primary); color:#fff; }
+
     .bot { background:#fff; border:1px solid var(--line); }
+
     .chat-input { display:flex; border-top:1px solid var(--line); }
+
     .chat-input input { flex:1; border:0; padding:13px; outline:none; }
+
     .chat-input button { border:0; padding:0 17px; background:var(--primary); color:#fff; cursor:pointer; font-weight:700; }
+
     @media (max-width:850px) { .footer-grid { grid-template-columns:1fr 1fr; } }
+
     @media (max-width:600px) {
+
       .container { width:min(100% - 28px, 1160px); }
+
       .nav-inner { min-height:64px; } .nav-links { gap:0; } .nav-links a { padding:8px; font-size:.78rem; }
+
       .contact-btn { display:none; } .footer-grid { grid-template-columns:1fr; }
+
       .form-wrap { padding:26px; } .row-2 { grid-template-columns:1fr; }
+
       .page-header { padding:46px 0 36px; } .section { padding:46px 0 70px; }
+
     }
+
   </style>
+
 </head>
+
 <body>
+
   <header class="navbar">
+
     <div class="container nav-inner">
+
       <a class="brand" href="index.html">JUNIOR<span>.SPACE</span></a>
+
       <nav aria-label="Main navigation">
+
         <ul class="nav-links">
+
           <li><a href="index.html">Home</a></li>
+
           <li><a href="mweb.html">Contents</a></li>
+
           <li><a href="about.html">About</a></li>
+
           <li><a href="form.html" class="active">Support</a></li>
+
         </ul>
+
       </nav>
+
       <button class="contact-btn" onclick="alert('Contact: +91 008 245 2944')">Contact</button>
+
     </div>
+
   </header>
 
+
+
   <main>
+
     <section class="page-header">
+
       <div class="container">
+
         <span class="badge">We'd love to hear from you</span>
+
         <h1>Send us your <span class="accent">feedback.</span></h1>
+
         <p>Your valuable feedback helps us improve our platform.</p>
+
       </div>
+
     </section>
+
+
 
     <section class="section">
+
       <div class="container">
+
         <div class="form-wrap">
+
           <form id="submit-form" method="POST" action="">
+
             <div class="row-2">
+
               <div class="field">
+
                 <label for="fname">Name</label>
+
                 <input type="text" id="fname" name="name" placeholder="Your name" required>
+
               </div>
+
               <div class="field">
+
                 <label for="femail">Email</label>
+
                 <input type="email" id="femail" name="email" placeholder="you@example.com" required>
+
               </div>
+
             </div>
 
+
+
             <div class="field">
+
               <label for="fcomment">Comment</label>
-              <textarea id="fcomment" name="Comment" placeholder="Tell us what you think..."></textarea>
+
+              <textarea id="fcomment" name="Comment" placeholder="Tell us what you think..." required></textarea>
+
             </div>
 
+
+
             <div class="field">
+
               <label>Rate our website</label>
+
               <div class="rating-group">
+
                 <input type="radio" id="radioOne" name="grade" value="Excellent" checked>
+
                 <label for="radioOne">Excellent</label>
+
                 <input type="radio" id="radioTwo" name="grade" value="Very Good">
+
                 <label for="radioTwo">Very Good</label>
+
                 <input type="radio" id="radioThree" name="grade" value="Good">
+
                 <label for="radioThree">Good</label>
+
                 <input type="radio" id="radioFour" name="grade" value="Bad">
+
                 <label for="radioFour">Bad</label>
+
                 <input type="radio" id="radioFive" name="grade" value="Very Bad">
+
                 <label for="radioFive">Very Bad</label>
+
               </div>
+
             </div>
+
+
 
             <button class="submit-btn" type="submit" id="submit-btn">Submit feedback</button>
+
             <div class="form-status" id="form-status"></div>
+
           </form>
+
         </div>
+
+
 
         <div class="alt-contact">
-          <a href="mailto:intellectsupport@gmail.com">junior.support@gmail.com</a>
+
+          <a href="mailto:junior.support@gmail.com">junior.support@gmail.com</a>
+
           <a href="tel:+910082452944">+91 008 245 2944</a>
+
         </div>
+
       </div>
+
     </section>
+
   </main>
 
+
+
   <footer>
+
     <div class="container">
+
       <div class="footer-grid">
+
         <div>
+
           <div class="footer-brand">JUNIOR<span>.SPACE</span></div>
+
           <p class="footer-copy">Making quality online education accessible to all.</p>
+
         </div>
+
         <div>
+
           <div class="footer-title">Company</div>
+
           <ul class="footer-links">
+
             <li><a href="about.html">About</a></li>
+
             <li><a href="form.html">Support us</a></li>
+
             <li><a href="portfolio.html" target="_blank">Developer</a></li>
+
             <li><a href="disclaimer.html" target="_blank">Disclaimer</a></li>
+
             <li><a href="index.html#missions">Mission</a></li>
+
           </ul>
+
         </div>
+
         <div>
+
           <div class="footer-title">Get in touch</div>
+
           <ul class="footer-links">
-            <li><a href="mailto:intellectsupport@gmail.com">junior.support@gmail.com</a></li>
+
+            <li><a href="mailto:junior.support@gmail.com">junior.support@gmail.com</a></li>
+
             <li><a href="tel:+910082452944">+91 008 245 2944</a></li>
+
             <li><a href="attain.html" target="_blank">Attain</a></li>
+
           </ul>
+
         </div>
+
       </div>
+
       <div class="footer-bottom">© 2023–26, junior.international.com · All Rights Reserved.</div>
+
     </div>
+
   </footer>
 
+
+
   <button id="chat-toggle" aria-label="Open chatbot">✦</button>
+
   <div id="chatbot">
-    <div class="chat-header"><span>Chatbot | INTELLECT</span><button id="close-chat" style="border:0;background:none;color:white;font-size:20px;cursor:pointer;">&times;</button></div>
+
+    <div class="chat-header"><span>Chatbot | JUNIOR.SPACE</span><button id="close-chat" style="border:0;background:none;color:white;font-size:20px;cursor:pointer;">&times;</button></div>
+
     <div id="chatbox"></div>
+
     <div class="chat-input"><input type="text" id="userinput" placeholder="Type a message..."><button id="sendbtn">Send</button></div>
+
   </div>
 
+
+
   <script>
-    /* Feedback form — posts to the same Apps Script endpoint as before */
-    $("#submit-form").submit(function (e) {
-      e.preventDefault();
-      const submitBtn = $("#submit-btn");
-      const status = $("#form-status");
-      submitBtn.prop("disabled", true).text("Sending...");
-      status.removeClass("success error").hide();
 
-      $.ajax({
-        url: "https://script.google.com/macros/s/AKfycbyek7wmZQGrx3JN6QPpLImXS8GvPmjshxSrD674ngVUHQ1PWG8UCssKT7sCRt9NL9_uoQ/exec",
-        data: $("#submit-form").serialize(),
-        method: "post",
-        success: function () {
-          status.addClass("form-status success").text("Thank you for rating us 😊").show();
-          $("#submit-form")[0].reset();
-        },
-        error: function () {
-          status.addClass("form-status error").text("Something went wrong, please try again...").show();
-        },
-        complete: function () {
-          submitBtn.prop("disabled", false).text("Submit feedback");
-        }
-      });
-    });
+    /* EmailJS setup:
+     * 1. Create an EmailJS account and add an Email Service.
+     * 2. Create a template with variables: name, email, Comment, grade.
+     * 3. Replace the three placeholder values below with your EmailJS IDs.
+     */
+  emailjs.init({ publicKey: "xsu0ZHZjFeD9BIAYC" });
 
-    /* Chatbot */
+  const feedbackForm = document.getElementById("submit-form");
+  const submitBtn = document.getElementById("submit-btn");
+  const statusBox = document.getElementById("form-status");
+
+  feedbackForm.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    if (!feedbackForm.reportValidity()) return;
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+    statusBox.className = "form-status";
+    statusBox.textContent = "";
+    statusBox.style.display = "none";
+
+    try {
+      await emailjs.sendForm(
+        "service_lfk5rpd",
+        "template_dsff5ui",
+        feedbackForm
+      );
+
+      statusBox.className = "form-status success";
+      statusBox.textContent = "Thank you! Your feedback has been sent successfully.";
+      statusBox.style.display = "block";
+      feedbackForm.reset();
+    } catch (error) {
+      console.error("EmailJS feedback error:", error);
+      statusBox.className = "form-status error";
+      statusBox.textContent = "Sorry, your feedback could not be sent. Please try again.";
+      statusBox.style.display = "block";
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Submit feedback";
+    }
+  });
+
+  /* Chatbot */
+
     const responses = {
+
       "hello":"Hi there! How can I assist you today?","hi":"Hi there! How can I assist you today?",
-      "intellect":"Here you will get notes and a lot of information. INTELLECT guides you and helps you with your learning and projects.",
+
+      "intellect":"Here you will find notes and useful information. JUNIOR.SPACE helps you with learning and projects.",
+
       "default":"Oops, I'm sorry, I didn't understand that."
+
     };
+
     const chatbot=document.getElementById("chatbot"),chatbox=document.getElementById("chatbox"),chatInput=document.getElementById("userinput");
+
     document.getElementById("chat-toggle").addEventListener("click",()=>{chatbot.style.display=chatbot.style.display==="block"?"none":"block";if(chatbot.style.display==="block")chatInput.focus();});
+
     document.getElementById("close-chat").addEventListener("click",()=>chatbot.style.display="none");
+
     document.getElementById("sendbtn").addEventListener("click",sendMessage);
+
     chatInput.addEventListener("keydown",e=>{if(e.key==="Enter")sendMessage();});
+
     function sendMessage(){const v=chatInput.value.trim();if(!v)return;appendMessage("user",v);chatInput.value="";const r=responses[v.toLowerCase()]||responses.default;setTimeout(()=>appendMessage("bot",r),350);}
+
     function appendMessage(s,m){const el=document.createElement("div");el.className="message "+s;el.innerHTML=m;chatbox.appendChild(el);chatbox.scrollTop=chatbox.scrollHeight;}
+
   </script>
+
 </body>
+
 </html>
+
+
